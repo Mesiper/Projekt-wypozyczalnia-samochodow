@@ -13,27 +13,16 @@ using std::string;
 
 int main()
 {
-    std::vector <Samochody> auta;
+    /*std::vector <Samochody> auta;
     Samochody obiekt;
+    obiekt.wczytywanie();
+    auta.push_back(obiekt);
+    auta[0].wyswietl();*/
 
-    //std::fstream plik;
-    //plik.open("samochody.txt", std::ios::in);
-
-    /*if (plik.good() == true)
-    {
-        int licznik_aut = 0;
-        while (!plik.eof()) {
-            obiekt.wczytywanie();
-            auta.push_back(obiekt);
-            licznik_aut++;
-        }
-    }
-    else
-    {
-        cout << " Problem z plikiem! ";
-    }*/
-
-    //auta[0].wyswietl();
+    Samochody obiekt;
+    obiekt.wczytywanie();
+    obiekt.wyswietl();
+    cout << obiekt.marka;
 
     return 0;
 }
