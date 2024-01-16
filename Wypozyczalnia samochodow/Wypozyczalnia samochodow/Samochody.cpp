@@ -3,7 +3,7 @@
 void Samochody::wczytywanie()
 {
     std::fstream plik;
-    ktory_samochod = 1;
+
     plik.open("samochody.txt", std::ios::in);
 
     if (plik.good() == true)

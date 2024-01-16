@@ -15,9 +15,23 @@ int main()
 {
     std::vector <Samochody> auta;
     Samochody obiekt;
+    
+    //auta.resize(3);
+
+    for (int i = 0; i < 2; i++) {
+        obiekt.ktory_samochod = i + 1;
+        obiekt.wczytywanie();
+        auta.push_back(obiekt);
+        auta[i].wyswietl();
+    }
+    
+    /*
+    obiekt.ktory_samochod = 1;
     obiekt.wczytywanie();
     auta.push_back(obiekt);
     auta[0].wyswietl();
+    */
+
 
     /*
     Samochody obiekt;
