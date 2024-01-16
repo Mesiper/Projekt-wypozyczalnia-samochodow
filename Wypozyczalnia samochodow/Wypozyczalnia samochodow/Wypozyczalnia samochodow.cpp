@@ -13,16 +13,17 @@ using std::string;
 
 int main()
 {
-    /*std::vector <Samochody> auta;
+    std::vector <Samochody> auta;
     Samochody obiekt;
     obiekt.wczytywanie();
     auta.push_back(obiekt);
-    auta[0].wyswietl();*/
+    auta[0].wyswietl();
 
+    /*
     Samochody obiekt;
     obiekt.wczytywanie();
     obiekt.wyswietl();
-    cout << obiekt.marka;
+    */
 
     return 0;
 }
