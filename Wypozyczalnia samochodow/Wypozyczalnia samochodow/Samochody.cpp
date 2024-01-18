@@ -102,6 +102,25 @@ void wyswietlanie()
 
 */
 
+int Samochody::ile_aut_w_pliku() {
+    std::fstream plik;
+    plik.open("samochody.txt", std::ios::in);
+
+    int licznik = 0;
+    string linia;
+
+    // petla tylko zlicza ilosc samochodow, wczytywane dane sa niewykorzystywane
+    while (!plik.eof()) {
+        std::getline(plik, linia);
+        licznik++;
+    }
+
+    /* dzielenie calkowite daje liczbe calkowita zaokraglona w dol,
+    * wiec jesli jakis samochod nie ma wpisanych wszystkich danych
+    * funkcja zwroci za malo samochodow */
+    return licznik / ilosc_atrybutow;
+}
+
 /*void Samochody::raport()
 {
     time_t czas;

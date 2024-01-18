@@ -1,5 +1,31 @@
 #include "Klienci.h"
 
+void Klienci::wczytywanie() {
+    std::fstream plik;
+
+    plik.open("klienci.txt", std::ios::in);
+
+    if (plik.good() == true)
+    {
+        int nr_linii = (ktory_klient - 1) * 3; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
+        string linia;
+        int licznik = 0;
+
+        while (std::getline(plik, linia))
+        {
+            if (licznik == nr_linii) imie = linia;
+            if (licznik == nr_linii + 1) nazwisko = linia;
+            if (licznik == nr_linii + 2) pesel = linia;
+            licznik++;
+        }
+        plik.close();
+    }
+    else
+    {
+        cout << " Problem z plikiem! ";
+    }
+}
+
 void Klienci::Dodawanie_klienta() {
     cout << "Podaj imie\n";
     cin >> imie;
@@ -69,4 +95,23 @@ void Klienci::oddanie() {
         cout << "gotowy oddac samochod?" << '\n';
         posiadanysamochod = 0;
     }
+}
+
+int Klienci::ile_klientow_w_pliku() {
+    std::fstream plik;
+    plik.open("klienci.txt", std::ios::in);
+
+    int licznik = 0;
+    string linia;
+
+    // petla tylko zlicza ilosc klientow, wczytywane dane sa niewykorzystywane
+    while (!plik.eof()) {
+        std::getline(plik, linia);
+        licznik++;
+    }
+
+    /* dzielenie calkowite daje liczbe calkowita zaokraglona w dol,
+    * wiec jesli jakis klient nie ma wpisanych wszystkich danych
+    * funkcja zwroci za malo klientow */
+    return licznik / ilosc_atrybutow;
 }

@@ -13,16 +13,39 @@ using std::string;
 
 int main()
 {
-    std::vector <Samochody> auta;
-    Samochody obiekt;
+    std::vector <Samochody> auta; // kontener (wektor) na samochody
+    Samochody obiekt_pom_auta;
     
+    /* zlicza ilosc aut w pliku tekstowym, zeby latwo w petli for wczytac
+    * i wiedziec ktory to jest element do dodania do kontenera */
+    int ile_aut = obiekt_pom_auta.ile_aut_w_pliku();
+    //cout << ile_aut << endl;  // sprawdzenie czy dziala
+    
+
     //auta.resize(3);
 
-    for (int i = 0; i < 2; i++) {
-        obiekt.ktory_samochod = i + 1;
-        obiekt.wczytywanie();
-        auta.push_back(obiekt);
+    // wczytywanie samochodow z pliku do wektora
+    for (int i = 0; i < ile_aut; i++) {
+        obiekt_pom_auta.ktory_samochod = i + 1;
+        obiekt_pom_auta.wczytywanie();
+        auta.push_back(obiekt_pom_auta);
         auta[i].wyswietl();
+    }
+
+    std::vector <Klienci> klienci; // kontener (wektor) na klientow
+    Klienci obiekt_pom_klienci;
+
+    /* zlicza ilosc klientow w pliku tekstowym, zeby latwo w petli for wczytac
+    * i wiedziec ktory to jest element do dodania do kontenera */
+    int ile_klientow = obiekt_pom_klienci.ile_klientow_w_pliku();
+    //cout << ile_klientow << endl; // sprawdzenie czy dziala
+
+    // wczytywanie klientow z pliku do wektora
+    for (int i = 0; i < ile_klientow; i++) {
+        obiekt_pom_klienci.ktory_klient = i + 1;
+        obiekt_pom_klienci.wczytywanie();
+        klienci.push_back(obiekt_pom_klienci);
+        klienci[i].wyswietldane();
     }
     
     /*
@@ -38,6 +61,8 @@ int main()
     obiekt.wczytywanie();
     obiekt.wyswietl();
     */
+
+
 
     return 0;
 }
