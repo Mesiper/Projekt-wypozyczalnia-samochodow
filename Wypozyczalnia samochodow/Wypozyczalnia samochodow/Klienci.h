@@ -31,6 +31,7 @@ public:
     const static int ilosc_atrybutow = 3;
 
     void wczytywanie();
+    void zapis_do_pliku();
     void Dodawanie_klienta();
     void wyswietldane();
     void czyposiadasamochod();

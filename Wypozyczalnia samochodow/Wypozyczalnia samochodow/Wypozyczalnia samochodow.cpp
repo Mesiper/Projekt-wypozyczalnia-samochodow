@@ -11,6 +11,12 @@ using std::cin;
 using std::endl;
 using std::string;
 
+void wyczysc_plik(string nazwa_pliku) {
+    std::fstream plik;
+    plik.open(nazwa_pliku, std::ios::out);
+    plik.close();
+}
+
 int main()
 {
     std::vector <Samochody> auta; // kontener (wektor) na samochody
@@ -62,7 +68,23 @@ int main()
     obiekt.wyswietl();
     */
 
+    // zapis samochodow do pliku
+    // czysci plik, do ktorego beda zapisywane dane
+    wyczysc_plik("samochody1.txt");
 
+    // zapisuje auta do uprzednio wyczyszczonego (pustego) pliku
+    for (int i = 0; i < ile_aut; i++) {
+        auta[i].zapis_do_pliku();
+    }
+
+    // zapis klientow do pliku
+    // czysci plik, do ktorego beda zapisywane dane
+    wyczysc_plik("klienci1.txt");
+
+    // zapisuje klientow do uprzednio wyczyszczonego (pustego) pliku
+    for (int i = 0; i < ile_aut; i++) {
+        klienci[i].zapis_do_pliku();
+    }
 
     return 0;
 }

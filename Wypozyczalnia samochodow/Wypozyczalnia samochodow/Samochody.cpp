@@ -8,7 +8,7 @@ void Samochody::wczytywanie()
 
     if (plik.good() == true)
     {
-        int nr_linii = (ktory_samochod - 1) * 4; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
+        int nr_linii = (ktory_samochod - 1) * ilosc_atrybutow; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
         string linia;
         int licznik = 0;
         while (std::getline(plik, linia))
@@ -25,6 +25,18 @@ void Samochody::wczytywanie()
     {
         cout << " Problem z plikiem! ";
     }
+}
+
+void Samochody::zapis_do_pliku() {
+    std::fstream plik;
+    plik.open("samochody1.txt", std::ios::out | std::ios::app);
+
+    plik << marka << std::endl;
+    plik << model << std::endl;
+    plik << tablica << std::endl;
+    plik << typ_paliwa << std::endl;
+
+    plik.close();
 }
 
 void Samochody::wyswietl()

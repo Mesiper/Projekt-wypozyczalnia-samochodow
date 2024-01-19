@@ -32,6 +32,7 @@ public:
     const static int ilosc_atrybutow = 4;
 
     void wczytywanie();
+    void zapis_do_pliku();
     void wyswietl();
     void dodawanie();
     void dodawanie_auta();

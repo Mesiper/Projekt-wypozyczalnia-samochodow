@@ -7,7 +7,7 @@ void Klienci::wczytywanie() {
 
     if (plik.good() == true)
     {
-        int nr_linii = (ktory_klient - 1) * 3; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
+        int nr_linii = (ktory_klient - 1) * ilosc_atrybutow; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
         string linia;
         int licznik = 0;
 
@@ -24,6 +24,17 @@ void Klienci::wczytywanie() {
     {
         cout << " Problem z plikiem! ";
     }
+}
+
+void Klienci::zapis_do_pliku() {
+    std::fstream plik;
+    plik.open("klienci1.txt", std::ios::out | std::ios::app);
+
+    plik << imie << std::endl;
+    plik << nazwisko << std::endl;
+    plik << pesel << std::endl;
+
+    plik.close();
 }
 
 void Klienci::Dodawanie_klienta() {
