@@ -2,7 +2,7 @@
 void samochod_dostawawczy::wczytywanie()
 {
     std::fstream plik;
-
+//test
     plik.open("samochodydostawcze.txt", std::ios::in);
 
     if (plik.good() == true)
