@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <conio.h>
 #include "Klienci.h"
 #include "Samochody.h"
 
@@ -52,6 +53,72 @@ int main()
         obiekt_pom_klienci.wczytywanie();
         klienci.push_back(obiekt_pom_klienci);
         klienci[i].wyswietldane();
+    }
+
+    char wybor = 1;
+
+    while (wybor != 3) {
+        system("cls");  // czysci ekran, zeby na pustym ekranie wypisac menu glowne
+
+        cout << "---- MENU GLOWNE ----" << endl;
+        cout << "1. Samochody." << endl;
+        cout << "2. Klienci." << endl;
+        cout << "3. Wyjscie." << endl;
+        cout << "Podaj liczbe: ";
+        cin >> wybor;
+
+        switch (wybor) {
+        case '1':
+            system("cls");  // czysci ekran, zeby na pustym ekranie wypisac menu samochodow a nie pod menu glownym
+
+            char wybor_samochody;
+            cout << "---- MENU SAMOCHODY ----" << endl;
+            cout << "1. Wyswietl dane samochodu." << endl;
+            cout << "2. Dodaj samochod." << endl;
+            cout << "3. Policz samochody. " << endl;
+            cout << "4. Wstecz." << endl;
+            cin >> wybor_samochody;
+
+            switch (wybor_samochody) {
+            case '1':
+                system("cls");
+
+                string tablica;
+
+                cout << "---- WYSWIETLANIE DANYCH SAMOCHODU ----" << endl;
+                cout << "Podaj tablice samochodu: ";
+                cin >> tablica;
+
+                for (int i = 0; i < ile_aut; i++) {
+                    if (tablica == auta[i].tablica) {
+                        auta[i].wyswietl();
+                    }
+                }
+            }
+        case '2':
+            system("cls");
+
+            char wybor_klienci;
+
+            cout << "---- MENU KLIENCI ----" << endl;
+            cout << "1. Wyswietl dane klienta." << endl;
+            cin >> wybor_klienci;
+
+            switch (wybor_klienci) {
+            case '1':
+                string pesel;
+
+                cout << "---- WYSWIETLANIE DANYCH KLIENTA ----" << endl;
+                cout << "Podaj PESEL klienta: ";
+                cin >> pesel;
+
+                for (int i = 0; i < ile_klientow; i++) {
+                    if (pesel == klienci[i].pesel) {
+                        klienci[i].wyswietldane();
+                    }
+                }
+            }
+        }
     }
     
     /*
