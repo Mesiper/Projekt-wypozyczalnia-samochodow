@@ -34,7 +34,7 @@ int main()
         obiekt_pom_auta.ktory_samochod = i + 1;
         obiekt_pom_auta.wczytywanie();
         auta.push_back(obiekt_pom_auta);
-        auta[i].wyswietl();
+        auta[i].wyswietl(); // do sprawdzenia
     }
 
     std::vector <Klienci> klienci; // kontener (wektor) na klientow
@@ -50,7 +50,7 @@ int main()
         obiekt_pom_klienci.ktory_klient = i + 1;
         obiekt_pom_klienci.wczytywanie();
         klienci.push_back(obiekt_pom_klienci);
-        klienci[i].wyswietldane();
+        klienci[i].wyswietldane();  // do sprawdzenia
     }
 
     std::vector <samochody_dostawcze> dostawczaki; // kontener (wektor) na samochody
@@ -62,7 +62,7 @@ int main()
         obiekt_pom_dostawczaki.ktory_samochod = i + 1;
         obiekt_pom_dostawczaki.wczytywanie();
         dostawczaki.push_back(obiekt_pom_dostawczaki);
-        dostawczaki[i].wyswietl();
+        dostawczaki[i].wyswietl();  // do sprawdzenia
     }
 
     char wybor = 1;
@@ -103,7 +103,7 @@ int main()
                 cin >> wybor_sam_osobowe;
 
                 switch (wybor_sam_osobowe) {
-                case '1':
+                case '1': {
                     system("cls");
 
                     string tab;
@@ -118,8 +118,9 @@ int main()
                         }
                     }
                     break;
+                }
 
-                    /*case '2':
+                    case '2':
                         system("cls");
 
                         cout << "---- DODAWANIE SAMOCHODU ----" << endl;
@@ -139,7 +140,7 @@ int main()
 
                     case '4':
                         cout << "Ilosc samochodow: " << ile_aut;
-                        break;*/
+                        break;
                 }
                 break;
 
@@ -157,7 +158,7 @@ int main()
                 cin >> wybor_sam_dostawcze;
 
                 switch (wybor_sam_dostawcze) {
-                case '1':
+                case '1': {
                     system("cls");
 
                     string tab1;
@@ -172,8 +173,9 @@ int main()
                         }
                     }
                     break;
+                }
 
-                    /*case '2':
+                    case '2':
                         system("cls");
 
                         cout << "---- DODAWANIE SAMOCHODU ----" << endl;
@@ -193,7 +195,7 @@ int main()
 
                     case '4':
                         cout << "Ilosc samochodow: " << ile_aut;
-                        break; */
+                        break;
                 }
             }
         case '2':
@@ -211,7 +213,7 @@ int main()
             cin >> wybor_klienci;
 
             switch (wybor_klienci) {
-            case '1':
+            case '1': {
                 system("cls");
 
                 string pesel;
@@ -226,8 +228,9 @@ int main()
                     }
                 }
                 break;
+            }
 
-                /*case '2':
+                case '2':
                     system("cls");
 
                     cout << "---- DODAWANIE KLIENTA ----" << endl;
@@ -249,8 +252,9 @@ int main()
                     cout << "Ilosc klientow: " << ile_klientow;
                     break;
 
-                case '5':
-
+                case '5': {
+                    string pesel;
+                    
                     cout << "Podaj PESEL klienta: ";
                     cin >> pesel;
 
@@ -260,8 +264,11 @@ int main()
                         }
                     }
                     break;
+                }
 
-                case '6':
+                case '6': {
+                    string pesel;
+                    
                     cout << "Podaj PESEL klienta: ";
                     cin >> pesel;
 
@@ -270,7 +277,8 @@ int main()
                             klienci[i].oddanie();
                         }
                     }
-                    break;*/
+                    break;
+                }
             }
         }
     }
