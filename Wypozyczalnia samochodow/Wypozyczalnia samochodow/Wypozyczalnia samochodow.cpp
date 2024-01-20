@@ -152,7 +152,7 @@ int main()
     for (int i = 0; i < ile_aut; i++) {
         klienci[i].zapis_do_pliku();
     }
-
+    
     return 0;
 }
 

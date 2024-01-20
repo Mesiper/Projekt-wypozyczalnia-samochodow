@@ -17,7 +17,7 @@ void samochody_dostawcze::wczytywanie()
             if (licznik == nr_linii + 1) model = linia;
             if (licznik == nr_linii + 2) tablica = linia;
             if (licznik == nr_linii + 3) typ_paliwa = linia;
-            //if (licznik == nr_linii + 4) pojemnosc_samochodu = linia;
+            if (licznik == nr_linii + 4) pojemnosc_samochodu = linia;
             licznik++;
         }
         plik.close();

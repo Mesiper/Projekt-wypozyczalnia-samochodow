@@ -11,7 +11,7 @@ class samochody_dostawcze :
     public Samochody
 {
 public:
-    int pojemnosc_samochodu;
+    string pojemnosc_samochodu;
     const static int ilosc_atrybutow = 5;
 
 
