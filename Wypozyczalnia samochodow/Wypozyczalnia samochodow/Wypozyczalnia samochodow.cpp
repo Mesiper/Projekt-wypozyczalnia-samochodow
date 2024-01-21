@@ -112,7 +112,11 @@ int main()
             cout << "---- MENU SAMOCHODY ----" << endl;
             cout << "1. Samochody osobowe." << endl;
             cout << "2. Samochody dostawcze." << endl;
-            cout << "3. Wstecz." << endl;
+            cout << "3. Dodaj klienta." << endl;
+            cout << "4. Usun klienta." << endl;
+            cout << "5. Dane klienta." << endl;
+            cout << "6. Wyswietl liczbe klientow" << endl;
+            cout << "7. Wstecz." << endl;
             cout << "Podaj liczbe: ";
             wybor_samochody = _getch();
 
@@ -275,49 +279,6 @@ int main()
                 }
             }
             case '3': {
-                // co tu dac?
-            }
-            default: {
-                cout << "Podano niepoprawna wartosc!";
-                break;
-            }
-            }
-            break;
-        }
-        case '2': {
-            system("cls");
-
-            char wybor_klienci;
-
-            cout << "---- MENU KLIENCI ----" << endl;
-            cout << "1. Wyswietl dane klienta." << endl;
-            cout << "2. Dodaj klienta." << endl;
-            cout << "3. Usun klienta." << endl;
-            cout << "4. Wyswietl Liczbe klientow." << endl;
-            cout << "5. Wypozycz samochod." << endl;
-            cout << "6. Zwroc samochod." << endl;
-            wybor_klienci = _getch();
-
-            switch (wybor_klienci) {
-            case '1': {
-                system("cls");
-
-                string pesel;
-
-                cout << "---- WYSWIETLANIE DANYCH KLIENTA ----" << endl;
-                cout << "Podaj PESEL klienta: ";
-                cin >> pesel;
-                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
-                for (int i = 0; i < ile_klientow; i++) {
-                    if (pesel == klienci[i].pesel) {
-                        klienci[i].wyswietldane();
-                        Sleep(2000);
-                    }
-                }
-                break;
-            }
-
-            case '2': {
                 system("cls");
 
                 cout << "---- DODAWANIE KLIENTA ----" << endl;
@@ -329,7 +290,7 @@ int main()
                 break;
             }
 
-            case '3': {
+            case '4': {
                 system("cls");
 
                 string pesel;
@@ -346,45 +307,129 @@ int main()
                 }
                 break;
             }
+            case '5': {
+                system("cls");
 
-            case '4': {
+                string pesel;
+
+                cout << "---- WYSWIETLANIE DANYCH KLIENTA ----" << endl;
+                cout << "Podaj PESEL klienta: ";
+                cin >> pesel;
+                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
+                for (int i = 0; i < ile_klientow; i++) {
+                    if (pesel == klienci[i].pesel) {
+                        klienci[i].wyswietldane();
+                        Sleep(2000);
+                    }
+                }
+                break;
+
+            }
+            case'6': {
                 system("cls");
                 cout << "Ilosc klientow: " << ile_klientow;
                 raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
                 Sleep(2000);
                 break;
             }
-
-            case '5': {
-                string pesel;
-
-                cout << "Podaj PESEL klienta: ";
-                cin >> pesel;
-
-                for (int i = 0; i < ile_klientow; i++) {
-                    if (pesel == klienci[i].pesel) {
-                        klienci[i].wypozyczenie();
-                    }
-                }
-                break;
+            
+            case '7': {
+                // co tu dac?
             }
-
-            case '6': {
-                string pesel;
-
-                cout << "Podaj PESEL klienta: ";
-                cin >> pesel;
-
-                for (int i = 0; i < ile_klientow; i++) {
-                    if (pesel == klienci[i].pesel) {
-                        klienci[i].oddanie();
-                    }
-                }
+            default: {
+                cout << "Podano niepoprawna wartosc!";
                 break;
             }
             }
             break;
         }
+        case '2': {
+            system("cls");
+            string pesel, haslo;
+            bool udaneLogowanie = false;
+            int proba = 0;
+
+            while (!udaneLogowanie && proba < 3) {
+                cout << "---- LOGOWANIE ----" << endl;
+                cout << "Podaj PESEL: ";
+                cin >> pesel;
+                cout << "Podaj haslo: ";
+                cin >> haslo;
+
+                if (obiekt_pom_klienci.logowanie(pesel, haslo)) {
+                    cout << "Logowanie udane!" << endl;
+                    udaneLogowanie = true;
+                    // Dodaj kod obsługujący zalogowanego klienta
+                    // np. wyświetlanie jego opcji, itp.
+
+
+                    system("cls");
+
+                    char wybor_klienci;
+
+                    cout << "---- MENU KLIENCI ----" << endl;
+                    
+                    cout << "1. Wyswietl Liczbe samochodow." << endl;// tu bedzie wyswietlala sie liczba samochodow
+                    cout << "2. Wypozycz samochod." << endl;
+                    cout << "3. Zwroc samochod." << endl;
+                    wybor_klienci = _getch();
+
+                    switch (wybor_klienci) {
+                    
+
+                    case '1': {
+                        system("cls");
+                        cout << "Ilosc klientow: " << ile_klientow;
+                        raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
+                        Sleep(2000);
+                        break;
+                    }
+
+                    case '2': {
+                        string pesel;
+
+                        cout << "Podaj PESEL klienta: ";
+                        cin >> pesel;
+
+                        for (int i = 0; i < ile_klientow; i++) {
+                            if (pesel == klienci[i].pesel) {
+                                klienci[i].wypozyczenie();
+                            }
+                        }
+                        break;
+                    }
+
+                    case '3': {
+                        string pesel;
+
+                        cout << "Podaj PESEL klienta: ";
+                        cin >> pesel;
+
+                        for (int i = 0; i < ile_klientow; i++) {
+                            if (pesel == klienci[i].pesel) {
+                                klienci[i].oddanie();
+                            }
+                        }
+                        break;
+                    }
+                    }
+                }
+                else {
+                    cout << "Nieudane logowanie. Sprawdz PESEL i haslo, a nastepnie sprobuj ponownie." << endl;
+                    proba++;
+                    if (proba < 3) {
+                        cout << "Pozostale proby: " << 3 - proba << '\n';
+                    }
+        }
+
+        
+            
+
+        // Czyszczenie ekranu
+            system("cls");
+    }
+        break;
+            }
         case '3': {
             system("cls");
 
@@ -411,6 +456,28 @@ int main()
                 break;
             }
             }
+            break;
+        }
+        case '4': {
+            system("cls");
+            string pesel, haslo;
+            cout << "---- LOGOWANIE ----" << endl;
+            cout << "Podaj PESEL: ";
+            cin >> pesel;
+            cout << "Podaj haslo: ";
+            cin >> haslo;
+
+            if (obiekt_pom_klienci.logowanie(pesel, haslo)) {
+                cout << "Logowanie udane!" << endl;
+                // Dodaj kod obsługujący zalogowanego klienta
+                // np. wyświetlanie jego opcji, itp.
+            }
+            else {
+                cout << "Nieudane logowanie. Sprawdz PESEL i haslo, a nastepnie sprobuj ponownie." << endl;
+            }
+
+            // Dodaj opóźnienie i czyszczenie ekranu
+            Sleep(2000);
             break;
         }
             deault: {

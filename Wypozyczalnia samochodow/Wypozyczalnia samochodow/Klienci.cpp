@@ -16,6 +16,7 @@ void Klienci::wczytywanie() {
             if (licznik == nr_linii) imie = linia;
             if (licznik == nr_linii + 1) nazwisko = linia;
             if (licznik == nr_linii + 2) pesel = linia;
+            if (licznik == nr_linii + 3) haslo = linia;
             licznik++;
         }
         plik.close();
@@ -33,6 +34,7 @@ void Klienci::zapis_do_pliku() {
     plik << imie << std::endl;
     plik << nazwisko << std::endl;
     plik << pesel << std::endl;
+    plik << haslo << std::endl;
 
     plik.close();
 }
@@ -44,12 +46,14 @@ void Klienci::Dodawanie_klienta() {
     cin >> nazwisko;
     cout << "Podaj pesel\n";
     cin >> pesel;
-    
+    cout << "Podaj haslo\n";
+    cin >> haslo;
     std::fstream plik;
     plik.open("bazaklient.txt", std::ios::out | std::ios::app);
     plik << imie << '\n';
     plik << nazwisko << '\n';
     plik << pesel << '\n';
+    plik << haslo << '\n';
   
     plik.close();
 
@@ -103,4 +107,33 @@ int Klienci::ile_klientow_w_pliku() {
     * wiec jesli jakis klient nie ma wpisanych wszystkich danych
     * funkcja zwroci za malo klientow */
     return licznik / ilosc_atrybutow;
+}
+bool Klienci::logowanie(string pesel, string haslo) {
+    std::fstream plik;
+    plik.open("klienci.txt", std::ios::in);
+
+    if (plik.good() == true) {
+        string linia;
+        int licznik = 0;
+        bool zalogowany = false;
+
+        while (std::getline(plik, linia)) {
+            if (licznik % ilosc_atrybutow == 2) {
+                // We are processing the line containing PESEL
+                if (linia == pesel) {
+                    // Znaleziono klienta o podanym PESELu
+                    // Move to the next line (line containing the password)
+                    std::getline(plik, linia);
+                    if (linia == haslo) {
+                        zalogowany = true;
+                        break;
+                    }
+                }
+            }
+            licznik++;
+        }
+        plik.close();
+        return zalogowany;
+    }
+    return false; 
 }

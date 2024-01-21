@@ -14,12 +14,7 @@ public:
     string imie;
     string nazwisko;
     string pesel;
-    string dataurodzenia;
-    string obywatelstwo;
-    string dokument;
-    string nrdokumentu;
-    string datawaznoscidokument;
-    string wazneprawojazdy; //czy to nie powinien byc bool?
+    string haslo;
     string id_samochodu;
     bool posiadanysamochod = 0;
     int ktory_klient;
@@ -28,7 +23,7 @@ public:
     * tylko mozna zmienna (przydatne bardziej przy testach)
     * static oznacza, ze wartosc zmiennej jest taka sama
     * dla wszystkich obiektow tej klasy */
-    const static int ilosc_atrybutow = 3;
+    const static int ilosc_atrybutow = 4;
 
     void wczytywanie();
     void zapis_do_pliku();
@@ -38,5 +33,6 @@ public:
     void wypozyczenie();
     void oddanie();
     int ile_klientow_w_pliku();
+    bool logowanie(string pesel, string haslo);
 };
 

@@ -7,3 +7,9 @@ Wyswietlono dane samochodu osobowego! 	ID: WSC59X2	2024-01-21 15:06:59
 Wyswietlono dane samochodu osobowego! 	ID: WSC59X2	2024-01-21 15:07:58
 Wyswietlono samochod dostawczy! 	2024-01-21 15:08:40
 Wyswietlono dane samochodu osobowego! 	ID: K1DIS	2024-01-21 15:09:52
+Wyswietlono klienta! 	ID: 05235143212	2024-01-21 16:16:15
+Wyswietlono dane samochodu osobowego! 	ID: WPL90KA	2024-01-21 16:26:20
+Wyswietlono klienta! 	ID: system("cls");	2024-01-21 16:35:10
+Wyswietlono klienta! 	ID: 02203123	2024-01-21 16:35:39
+Wyswietlono ilosc klientow! 	2024-01-21 16:35:39
+Wyswietlono ilosc klientow! 	2024-01-21 16:38:34
