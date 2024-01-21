@@ -49,7 +49,7 @@ void Klienci::Dodawanie_klienta() {
     cout << "Podaj haslo\n";
     cin >> haslo;
     std::fstream plik;
-    plik.open("bazaklient.txt", std::ios::out | std::ios::app);
+    plik.open("klienci.txt", std::ios::out | std::ios::app);
     plik << imie << '\n';
     plik << nazwisko << '\n';
     plik << pesel << '\n';

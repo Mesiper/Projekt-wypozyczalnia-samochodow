@@ -48,7 +48,7 @@ void samochody_dostawcze::wyswietl()
     cout << "Model: " << model << '\n';
     cout << "Tablia: " << tablica << '\n';
     cout << "Typ paliwa: " << typ_paliwa << '\n';
-    cout << "Pojemnosc auta w litrach" << pojemnosc_samochodu << '\n';
+    cout << "Pojemnosc auta w litrach: " << pojemnosc_samochodu << '\n';
 }
 
 void samochody_dostawcze::dodawanie()

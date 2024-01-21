@@ -13,3 +13,17 @@ Wyswietlono klienta! 	ID: system("cls");	2024-01-21 16:35:10
 Wyswietlono klienta! 	ID: 02203123	2024-01-21 16:35:39
 Wyswietlono ilosc klientow! 	2024-01-21 16:35:39
 Wyswietlono ilosc klientow! 	2024-01-21 16:38:34
+Dodano klienta! 	ID: Szymon	2024-01-21 16:48:25
+Admin dodal samochod! 	ID: KKKLLL	2024-01-21 16:54:50
+Admin dodal samochod dostawczy! 	ID: f	2024-01-21 16:57:01
+Admin dodal samochod dostawczy! 	ID: LLLKKK	2024-01-21 17:01:08
+Admin dodal samochod dostawczy! 	ID: KASD	2024-01-21 17:04:32
+Dodano klienta! 	ID: Szym312415	2024-01-21 17:04:32
+Wyswietlono dane samochodu osobowego! 	ID: KR595SN	2024-01-21 17:08:33
+Wyswietlono dane samochodu osobowego! 	ID: KR595SN	2024-01-21 17:09:46
+Wyswietlono dane samochodu osobowego! 	ID: KR595SN	2024-01-21 17:10:35
+Wyswietlono dane samochodu osobowego! 	ID: KR595SN	2024-01-21 17:11:01
+Wyswietlono samochod dostawczy! 	LLLKKK2024-01-21 17:12:52
+Admin dodal samochod dostawczy! 	ID: KASDK99	2024-01-21 17:17:31
+Wyswietlono ilosc samochodow dostawczych!	2024-01-21 17:18:20
+Wyswietlono ilosc samochodow dostawczych!	2024-01-21 17:19:50

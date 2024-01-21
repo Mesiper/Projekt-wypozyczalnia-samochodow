@@ -149,6 +149,11 @@ int main()
                             auta[i].wyswietl();
                             Sleep(2000);
                         }
+                        else {
+                            cout << "Brak samochodu w bazie! " << endl;
+                            Sleep(2000);
+                            break;
+                        }
                     }
                     raport << "Wyswietlono dane samochodu osobowego! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
@@ -161,6 +166,7 @@ int main()
                     obiekt_pom_auta.dodawanie();
                     auta.push_back(obiekt_pom_auta);
                     ile_aut++;
+                    cout << "Samochod dodany! " << "ID: " << auta[ile_aut - 1].tablica << std::endl;
                     raport << "Admin dodal samochod! " << '\t' << "ID: " << auta[ile_aut-1].tablica <<'\t' << sformatowanyCzas << std::endl;
                     break;
                 }
@@ -187,14 +193,14 @@ int main()
                 case '4': {
                     system("cls");
                     cout << "Ilosc samochodow: " << ile_aut;
-                    raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
+                    raport << "Wyswietlono ilosc Samochodow! " << '\t' << sformatowanyCzas << std::endl;
                     Sleep(2000);
                     break;
                 }
                 case '5': {
                     // co tu dac?
                 }
-                    defaulf: {
+                    default: {
                         cout << "Podano niepoprawna wartosc!";
                 }
                 }
@@ -239,7 +245,8 @@ int main()
                     cout << "---- DODAWANIE SAMOCHODU ----" << endl;
                     obiekt_pom_dostawczaki.dodawanie();
                     dostawczaki.push_back(obiekt_pom_dostawczaki);
-                    ile_aut++;
+                    ile_dostawczakow++;
+                    cout << "Samochod dodany! " << "ID: " << dostawczaki[ile_dostawczakow - 1].tablica << std::endl;
                     raport << "Admin dodal samochod dostawczy! " << '\t' << "ID: " << dostawczaki[ile_dostawczakow - 1].tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
                 }
@@ -252,13 +259,13 @@ int main()
                     cout << "---- USUWANIE SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tablica;
-                    raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tablica == dostawczaki[i].tablica) {
                             dostawczaki.erase(dostawczaki.begin()+i);
                             ile_dostawczakow--;
                         }
                     }
+                    raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
                 }
 
@@ -276,6 +283,7 @@ int main()
                     cout << "Podano niepoprawna wartosc!";
                     break;
                 }
+                break;
                 }
             }
             case '3': {
@@ -286,7 +294,7 @@ int main()
                 obiekt_pom_klienci.Dodawanie_klienta();
                 klienci.push_back(obiekt_pom_klienci);
                 ile_klientow++;
-                raport << "Dodano klienta! " << '\t' << "ID: " << klienci[ile_klientow - 1].imie << '\t' << sformatowanyCzas << std::endl;
+                raport << "Dodano klienta! " << '\t' << "ID: " << klienci[ile_klientow - 1].pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
             }
 
@@ -298,13 +306,13 @@ int main()
                 cout << "---- USUWANIE KLIENTA ----" << endl;
                 cout << "Podaj pesel: ";
                 cin >> pesel;
-                raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci.erase(klienci.begin() + i);
                         ile_klientow--;
                     }
                 }
+                raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
             }
             case '5': {
@@ -315,13 +323,14 @@ int main()
                 cout << "---- WYSWIETLANIE DANYCH KLIENTA ----" << endl;
                 cout << "Podaj PESEL klienta: ";
                 cin >> pesel;
-                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
+                
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci[i].wyswietldane();
                         Sleep(2000);
                     }
                 }
+                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
 
             }
@@ -480,7 +489,7 @@ int main()
             Sleep(2000);
             break;
         }
-            deault: {
+        default: {
                 cout << "Podano niepoprawny numer!";
                 break;
         }
@@ -516,7 +525,7 @@ int main()
     
     return 0;
 }
-
+ 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
 // Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
 
