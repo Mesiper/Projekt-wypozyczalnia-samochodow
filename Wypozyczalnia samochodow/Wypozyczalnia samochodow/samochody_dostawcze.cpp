@@ -8,7 +8,7 @@ void samochody_dostawcze::wczytywanie()
 
     if (plik.good() == true)
     {
-        int nr_linii = (ktory_samochod - 1) * ilosc_atrybutow; //5 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
+        int nr_linii = (ktory_samochod - 1) * ilosc_atrybutow;
         string linia;
         int licznik = 0;
         while (std::getline(plik, linia))
@@ -51,7 +51,6 @@ void samochody_dostawcze::wyswietl()
     cout << "Pojemnosc auta w litrach" << pojemnosc_samochodu << '\n';
 }
 
-//zastanowmy sie nad inna metoda na zapisywanie raportu niz w stringu
 void samochody_dostawcze::dodawanie()
 {
     std::fstream plik;

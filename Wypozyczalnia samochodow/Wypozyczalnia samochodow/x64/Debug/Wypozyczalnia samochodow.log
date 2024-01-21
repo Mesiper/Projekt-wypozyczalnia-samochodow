@@ -1,4 +1,5 @@
-﻿  Wypozyczalnia samochodow.cpp
-C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(164,21): warning C4102: "defaulf": etykieta, do której nie istnieje odwołanie
-C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(379,13): warning C4102: "deault": etykieta, do której nie istnieje odwołanie
-  Wypozyczalnia samochodow.vcxproj -> C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\x64\Debug\Wypozyczalnia samochodow.exe
+﻿  Klienci.cpp
+  samochody_dostawcze.cpp
+  samochody_osobowe.cpp
+  Generating Code...
+  Wypozyczalnia samochodow.vcxproj -> D:\Szymon_PRACA_ADOBR\C_PROJEKT\Wypozyczalnia samochodow\x64\Debug\Wypozyczalnia samochodow.exe

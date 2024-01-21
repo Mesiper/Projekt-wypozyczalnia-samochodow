@@ -155,7 +155,9 @@ int main()
                 }
 
                 case '4': {
+                    system("cls");
                     cout << "Ilosc samochodow: " << ile_aut;
+                    Sleep(2000);
                     break;
                 }
                 case '5': {
@@ -194,6 +196,7 @@ int main()
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tab1 == dostawczaki[i].tablica) {
                             dostawczaki[i].wyswietl();
+                            Sleep(2000);
                         }
                     }
                     break;
@@ -229,7 +232,9 @@ int main()
                 }
 
                 case '4': {
-                    cout << "Ilosc samochodow: " << ile_aut;
+                    system("cls");
+                    cout << "Ilosc samochodow: " << ile_dostawczakow;
+                    Sleep(2000);
                     break;
                 }
                 case '5': {
@@ -314,7 +319,9 @@ int main()
             }
 
             case '4': {
+                system("cls");
                 cout << "Ilosc klientow: " << ile_klientow;
+                Sleep(2000);
                 break;
             }
 

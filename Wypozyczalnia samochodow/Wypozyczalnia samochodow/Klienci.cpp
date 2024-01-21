@@ -7,7 +7,7 @@ void Klienci::wczytywanie() {
 
     if (plik.good() == true)
     {
-        int nr_linii = (ktory_klient - 1) * ilosc_atrybutow; //4 bo ilosc atrybutow, do update jak bedzie wiecej gotowe
+        int nr_linii = (ktory_klient - 1) * ilosc_atrybutow;
         string linia;
         int licznik = 0;
 
@@ -44,31 +44,13 @@ void Klienci::Dodawanie_klienta() {
     cin >> nazwisko;
     cout << "Podaj pesel\n";
     cin >> pesel;
-    /*cout << "Podaj date urodzenia\n";
-    cin >> dataurodzenia;
-    cout << "Podaj obywatelstwo \n";
-    cin >> obywatelstwo;
-    cout << "Podaj dokument\n";
-    cin >> dokument;
-    cout << "Podaj numer dokumentu\n";
-    cin >> nrdokumentu;
-    cout << "Podaj date waznosci dokuemntu\n";
-    cin >> datawaznoscidokument;
-    cout << "Podaj date waznosci prawa jazdy\n";
-    cin >> wazneprawojazdy;
-    */
+    
     std::fstream plik;
     plik.open("bazaklient.txt", std::ios::out | std::ios::app);
     plik << imie << '\n';
     plik << nazwisko << '\n';
     plik << pesel << '\n';
-    /*
-    plik << dataurodzenia << '\n';
-    plik << obywatelstwo << '\n';
-    plik << dokument << '\n';
-    plik << nrdokumentu << '\n';
-    */
-    // brakuje plik datawaznosci, i plik wazne prawo jazdy jak cos.
+  
     plik.close();
 
 }
@@ -92,11 +74,7 @@ void Klienci::wypozyczenie() {
         posiadanysamochod = 1;
     }
 
-    /*fstream plik;
-    plik.open("bazaklient.txt", ios::out | ios::app);
-    plik << id_samochodu << '\n';
-    plik.close();
-    */
+
 
 
 
