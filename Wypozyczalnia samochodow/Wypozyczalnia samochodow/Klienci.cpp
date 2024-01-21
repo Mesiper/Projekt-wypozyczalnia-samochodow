@@ -17,6 +17,7 @@ void Klienci::wczytywanie() {
             if (licznik == nr_linii + 1) nazwisko = linia;
             if (licznik == nr_linii + 2) pesel = linia;
             if (licznik == nr_linii + 3) haslo = linia;
+            if (licznik == nr_linii + 4) posiadanysamochod = linia;
             licznik++;
         }
         plik.close();
@@ -48,12 +49,15 @@ void Klienci::Dodawanie_klienta() {
     cin >> pesel;
     cout << "Podaj haslo\n";
     cin >> haslo;
+    cout << "Podaj haslo\n";
+    cin >> posiadanysamochod;
     std::fstream plik;
     plik.open("klienci.txt", std::ios::out | std::ios::app);
     plik << imie << '\n';
     plik << nazwisko << '\n';
     plik << pesel << '\n';
     plik << haslo << '\n';
+    plik << posiadanysamochod << '\n';
   
     plik.close();
 
@@ -62,14 +66,19 @@ void Klienci::wyswietldane() {
     cout << imie << '\n';
     cout << nazwisko << '\n';
     cout << pesel << '\n';
+    cout << posiadanysamochod << '\n';
 }
+
+
+
+/*
 void Klienci::czyposiadasamochod() {
-    if (posiadanysamochod) {
+    if (posiadanysamochod12) {
         cout << "gotowy oddac samochod?" << '\n';
     }
 }
 void Klienci::wypozyczenie() {
-    if (posiadanysamochod) {
+    if (posiadanysamochod12) {
         cout << "gotowy oddac samochod?" << '\n';
     }
     else {
@@ -77,19 +86,20 @@ void Klienci::wypozyczenie() {
         cin >> id_samochodu;
         posiadanysamochod = 1;
     }
+}    
+    
 
 
 
 
 
-}
 void Klienci::oddanie() {
-    if (posiadanysamochod) {
+    if (posiadanysamochod12) {
         cout << "gotowy oddac samochod?" << '\n';
-        posiadanysamochod = 0;
+        posiadanysamochod12 = 0;
     }
 }
-
+*/
 int Klienci::ile_klientow_w_pliku() {
     std::fstream plik;
     plik.open("klienci.txt", std::ios::in);
@@ -119,10 +129,10 @@ bool Klienci::logowanie(string pesel, string haslo) {
 
         while (std::getline(plik, linia)) {
             if (licznik % ilosc_atrybutow == 2) {
-                // We are processing the line containing PESEL
+                
                 if (linia == pesel) {
                     // Znaleziono klienta o podanym PESELu
-                    // Move to the next line (line containing the password)
+                    
                     std::getline(plik, linia);
                     if (linia == haslo) {
                         zalogowany = true;

@@ -1,6 +1,3 @@
 ﻿  Wypozyczalnia samochodow.cpp
 D:\githubprojekty\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(13,10): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
-  samochody_dostawcze.cpp
-  samochody_osobowe.cpp
-  Generowanie kodu...
   Wypozyczalnia samochodow.vcxproj -> D:\githubprojekty\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\x64\Debug\Wypozyczalnia samochodow.exe

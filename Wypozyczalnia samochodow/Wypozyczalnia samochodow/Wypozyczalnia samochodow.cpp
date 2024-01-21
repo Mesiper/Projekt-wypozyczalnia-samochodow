@@ -461,31 +461,26 @@ int main()
 
                     // Wypozycz samochod
                     case '2': {
-                        string pesel;
+                        
 
-                        cout << "Podaj PESEL klienta: ";
-                        cin >> pesel;
-
-                        for (int i = 0; i < ile_klientow; i++) {
+                        /*for (int i = 0; i < ile_klientow; i++) {
                             if (pesel == klienci[i].pesel) {
                                 klienci[i].wypozyczenie();
                             }
-                        }
+                        }*/
+
                         break;
                     }
 
                     // Zwroc samochod
                     case '3': {
-                        string pesel;
-
-                        cout << "Podaj PESEL klienta: ";
-                        cin >> pesel;
-
+                        
+                        /*
                         for (int i = 0; i < ile_klientow; i++) {
                             if (pesel == klienci[i].pesel) {
                                 klienci[i].oddanie();
                             }
-                        }
+                        }*/
                         break;
                     }
 

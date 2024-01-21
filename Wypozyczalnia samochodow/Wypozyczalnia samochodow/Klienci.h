@@ -16,7 +16,8 @@ public:
     string pesel;
     string haslo;
     string id_samochodu;
-    bool posiadanysamochod = 0;
+    string posiadanysamochod;
+    bool posiadanysamochod12=0;
     int ktory_klient;
 
     /* stala okreslajaca ilosc atrybutow, zeby nie trzeba bylo liczby wpisywac,
@@ -30,8 +31,8 @@ public:
     void Dodawanie_klienta();
     void wyswietldane();
     void czyposiadasamochod();
-    void wypozyczenie();
-    void oddanie();
+    void wypozyczenie(string rejestracja);
+    void oddanie(string rejestracja);
     int ile_klientow_w_pliku();
     bool logowanie(string pesel, string haslo);
 };
