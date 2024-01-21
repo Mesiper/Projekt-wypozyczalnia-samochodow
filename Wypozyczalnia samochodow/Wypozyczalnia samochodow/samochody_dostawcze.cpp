@@ -20,12 +20,12 @@ void samochody_dostawcze::wczytywanie()
             if (licznik == nr_linii + 4) pojemnosc_samochodu = linia;
             licznik++;
         }
-        plik.close();
     }
     else
     {
         cout << " Problem z plikiem! ";
     }
+    plik.close();
 }
 
 void samochody_dostawcze::zapis_do_pliku() {

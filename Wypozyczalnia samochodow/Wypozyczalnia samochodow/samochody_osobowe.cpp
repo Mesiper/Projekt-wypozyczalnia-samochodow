@@ -19,12 +19,12 @@ void samochody_osobowe::wczytywanie()
             if (licznik == nr_linii + 3) typ_paliwa = linia;
             licznik++;
         }
-        plik.close();
     }
     else
     {
         cout << " Problem z plikiem! ";
     }
+    plik.close();
 }
 
 void samochody_osobowe::zapis_do_pliku() {

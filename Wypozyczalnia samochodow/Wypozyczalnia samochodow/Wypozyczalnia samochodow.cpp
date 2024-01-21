@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <conio.h>
+#include <stdio.h>
+#include <windows.h>
 #include "Klienci.h"
 #include "Samochody.h"
 #include "samochody_dostawcze.h"
@@ -76,7 +78,7 @@ int main()
         cout << "2. Klienci." << endl;
         cout << "3. Wyjscie." << endl;
         cout << "Podaj liczbe: ";
-        cin >> wybor;
+        wybor = _getch();
 
         switch (wybor) {
         case '1': {
@@ -88,7 +90,7 @@ int main()
             cout << "2. Samochody dostawcze." << endl;
             cout << "3. Wstecz." << endl;
             cout << "Podaj liczbe: ";
-            cin >> wybor_samochody;
+            wybor_samochody = _getch();
 
             switch (wybor_samochody) {
             case '1': {
@@ -102,7 +104,7 @@ int main()
                 cout << "3. Usun samochod." << endl;
                 cout << "4. Podaj ilosc samochodow." << endl;
                 cout << "5. Wstecz." << endl;
-                cin >> wybor_sam_osobowe;
+                wybor_sam_osobowe = _getch();
 
                 switch (wybor_sam_osobowe) {
                 case '1': {
@@ -117,6 +119,7 @@ int main()
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
                             auta[i].wyswietl();
+                            Sleep(2000);
                         }
                     }
                     break;
@@ -176,7 +179,7 @@ int main()
                 cout << "3. Usun samochod." << endl;
                 cout << "4. Podaj ilosc samochodow." << endl;
                 cout << "5. Wstecz." << endl;
-                cin >> wybor_sam_dostawcze;
+                wybor_sam_dostawcze = _getch();
 
                 switch (wybor_sam_dostawcze) {
                 case '1': {
@@ -230,7 +233,7 @@ int main()
                     break;
                 }
                 case '5': {
-                    // co tu dac?
+                    break;
                 }
                 default: {
                     cout << "Podano niepoprawna wartosc!";
@@ -246,6 +249,7 @@ int main()
                 break;
             }
             }
+            break;
         }
         case '2': {
             system("cls");
@@ -259,7 +263,7 @@ int main()
             cout << "4. Podaj ilosc klientow." << endl;
             cout << "5. Wypozycz samochod." << endl;
             cout << "6. Zwroc samochod." << endl;
-            cin >> wybor_klienci;
+            wybor_klienci = _getch();
 
             switch (wybor_klienci) {
             case '1': {
@@ -274,12 +278,13 @@ int main()
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci[i].wyswietldane();
+                        Sleep(2000);
                     }
                 }
                 break;
             }
 
-            case '2':
+            case '2': {
                 system("cls");
 
                 cout << "---- DODAWANIE KLIENTA ----" << endl;
@@ -288,18 +293,30 @@ int main()
                 klienci.push_back(obiekt_pom_klienci);
                 ile_klientow++;
                 break;
+            }
 
-            case '3':
+            case '3': {
                 system("cls");
 
+                string pesel;
+
                 cout << "---- USUWANIE KLIENTA ----" << endl;
+                cout << "Podaj pesel: ";
+                cin >> pesel;
 
-                // funkcja usuwania z wektora
+                for (int i = 0; i < ile_klientow; i++) {
+                    if (pesel == klienci[i].pesel) {
+                        klienci.erase(klienci.begin() + i);
+                        ile_klientow--;
+                    }
+                }
                 break;
+            }
 
-            case '4':
+            case '4': {
                 cout << "Ilosc klientow: " << ile_klientow;
                 break;
+            }
 
             case '5': {
                 string pesel;
@@ -329,6 +346,7 @@ int main()
                 break;
             }
             }
+            break;
         }
         case '3': {
             system("cls");
@@ -338,7 +356,7 @@ int main()
             cout << "Czy na pewno chcesz zamknac program?" << endl;
             cout << "1. Tak." << endl;
             cout << "2. Nie." << endl;
-            cin >> wybor_wyjscie;
+            wybor_wyjscie = _getch();
 
             switch (wybor_wyjscie) {
             case '1': {
@@ -351,10 +369,12 @@ int main()
             }
             default: {
                 cout << "Podano niepoprawny numer!";
+                Sleep(1000);
                 wybor = 1;
                 break;
             }
             }
+            break;
         }
             deault: {
                 cout << "Podano niepoprawny numer!";
@@ -362,10 +382,10 @@ int main()
         }
         }
     }
-
+    
     // zapis samochodow do pliku
     // czysci plik, do ktorego beda zapisywane dane
-    wyczysc_plik("samochody1.txt");
+    wyczysc_plik("samochody_osobowe.txt");
 
     // zapisuje auta do uprzednio wyczyszczonego (pustego) pliku
     for (int i = 0; i < ile_aut; i++) {
@@ -377,10 +397,19 @@ int main()
     wyczysc_plik("klienci1.txt");
 
     // zapisuje klientow do uprzednio wyczyszczonego (pustego) pliku
-    for (int i = 0; i < ile_aut; i++) {
+    for (int i = 0; i < ile_klientow; i++) {
         klienci[i].zapis_do_pliku();
     }
 
+    // zapis samochodow do pliku
+// czysci plik, do ktorego beda zapisywane dane
+    wyczysc_plik("samochodydostawcze.txt");
+
+    // zapisuje auta do uprzednio wyczyszczonego (pustego) pliku
+    for (int i = 0; i < ile_dostawczakow; i++) {
+        dostawczaki[i].zapis_do_pliku();
+    }
+    
     return 0;
 }
 
