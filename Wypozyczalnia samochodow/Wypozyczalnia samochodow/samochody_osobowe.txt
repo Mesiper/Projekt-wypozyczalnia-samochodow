@@ -1,6 +1,6 @@
-NISSAN 
-GTR 
-WSC59X2 
+NISSAN
+GTR
+WSC59X2
 ON
 TAK
 FORD
@@ -38,3 +38,8 @@ Multipla
 KKKLLL
 ON
 TAK
+Telsa
+Cybertruck
+WD218XD
+ON
+ON

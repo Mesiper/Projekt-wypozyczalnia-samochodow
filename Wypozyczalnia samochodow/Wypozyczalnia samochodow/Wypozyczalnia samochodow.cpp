@@ -105,6 +105,7 @@ int main()
         wybor = _getch();
 
         switch (wybor) {
+        // Admin -> MENU SAMOCHODY
         case '1': {
             system("cls");  // czysci ekran, zeby na pustym ekranie wypisac menu samochodow a nie pod menu glownym
 
@@ -121,6 +122,7 @@ int main()
             wybor_samochody = _getch();
 
             switch (wybor_samochody) {
+            // Samochody osobowe -> MENU SAMOCHODY OSOBOWE
             case '1': {
                 system("cls");
 
@@ -130,11 +132,13 @@ int main()
                 cout << "1. Wyswietl dane samochodu." << endl;
                 cout << "2. Dodaj samochod." << endl;
                 cout << "3. Usun samochod." << endl;
-                cout << "4. Podaj ilosc samochodow." << endl;
+                cout << "4. Wyswietl liczbe samochodow osobowych." << endl;
                 cout << "5. Wstecz." << endl;
+                cout << "Podaj liczbe: ";
                 wybor_sam_osobowe = _getch();
 
                 switch (wybor_sam_osobowe) {
+                // Wyswietl dane samochodu
                 case '1': {
                     system("cls");
 
@@ -147,18 +151,19 @@ int main()
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
                             auta[i].wyswietl();
-                            Sleep(2000);
-                        }
-                        else {
-                            cout << "Brak samochodu w bazie! " << endl;
-                            Sleep(2000);
-                            break;
+                            cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                            _getch();
                         }
                     }
+                    cout << "Brak samochodu w bazie! " << endl << endl;
+                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                    _getch();
+
                     raport << "Wyswietlono dane samochodu osobowego! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
                 }
 
+                // Dodaj samochod
                 case '2': {
                     system("cls");
 
@@ -171,7 +176,7 @@ int main()
                     break;
                 }
 
-
+                // Usun samochod
                 case '3': {
                     system("cls");
 
@@ -190,6 +195,7 @@ int main()
                     break;
                 }
 
+                // Podaj ilosc samochodow
                 case '4': {
                     system("cls");
                     cout << "Ilosc samochodow: " << ile_aut;
@@ -197,16 +203,21 @@ int main()
                     Sleep(2000);
                     break;
                 }
+
+                // Wstecz
                 case '5': {
                     // co tu dac?
+                    break;
                 }
                     default: {
                         cout << "Podano niepoprawna wartosc!";
+                        break;
                 }
                 }
                 break;
             }
 
+            // Samochody dostawcze -> MENU SAMOCHODY DOSTAWCZE
             case '2': {
                 system("cls");
 
@@ -216,11 +227,13 @@ int main()
                 cout << "1. Wyswietl dane samochodu." << endl;
                 cout << "2. Dodaj samochod." << endl;
                 cout << "3. Usun samochod." << endl;
-                cout << "4. Podaj ilosc samochodow." << endl;
+                cout << "4. Wyswietl liczbe samochodow dostawczych." << endl;
                 cout << "5. Wstecz." << endl;
+                cout << "Podaj liczbe: ";
                 wybor_sam_dostawcze = _getch();
 
                 switch (wybor_sam_dostawcze) {
+                // Wyswietl dane samochodu
                 case '1': {
                     system("cls");
 
@@ -233,12 +246,14 @@ int main()
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tab1 == dostawczaki[i].tablica) {
                             dostawczaki[i].wyswietl();
-                            Sleep(2000);
+                            cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                            _getch();
                         }
                     }
                     break;
                 }
 
+                // Dodaj samochod
                 case '2': {
                     system("cls");
 
@@ -251,6 +266,7 @@ int main()
                     break;
                 }
 
+                // Usun samochod
                 case '3': {
                     system("cls");
 
@@ -269,6 +285,7 @@ int main()
                     break;
                 }
 
+                // Podaj ilosc samochodow
                 case '4': {
                     system("cls");
                     raport << "Wyswietlono ilosc samochodow dostawczych!" << '\t'<< sformatowanyCzas << std::endl;
@@ -276,6 +293,8 @@ int main()
                     Sleep(2000);
                     break;
                 }
+
+                // Wstecz
                 case '5': {
                     break;
                 }
@@ -285,7 +304,10 @@ int main()
                 }
                 break;
                 }
+                break;
             }
+
+            // Dodaj klienta
             case '3': {
                 system("cls");
 
@@ -298,6 +320,7 @@ int main()
                 break;
             }
 
+            // Usun klienta
             case '4': {
                 system("cls");
 
@@ -315,6 +338,8 @@ int main()
                 raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
             }
+
+            // Dane klienta
             case '5': {
                 system("cls");
 
@@ -334,6 +359,8 @@ int main()
                 break;
 
             }
+
+            // Wyswietl liczbe klientow
             case'6': {
                 system("cls");
                 cout << "Ilosc klientow: " << ile_klientow;
@@ -342,8 +369,10 @@ int main()
                 break;
             }
             
+            // Wstecz
             case '7': {
                 // co tu dac?
+                break;
             }
             default: {
                 cout << "Podano niepoprawna wartosc!";
@@ -352,6 +381,8 @@ int main()
             }
             break;
         }
+
+        // Klienci -> LOGOWANIE -> MENU KLIENCI
         case '2': {
             system("cls");
             string pesel, haslo;
@@ -381,11 +412,12 @@ int main()
                     cout << "1. Wyswietl Liczbe samochodow." << endl;// tu bedzie wyswietlala sie liczba samochodow
                     cout << "2. Wypozycz samochod." << endl;
                     cout << "3. Zwroc samochod." << endl;
+                    cout << "4. Wstecz." << endl;
+                    cout << "Podaj liczbe: ";
                     wybor_klienci = _getch();
 
                     switch (wybor_klienci) {
-                    
-
+                    // 
                     case '1': {
                         system("cls");
                         cout << "Ilosc klientow: " << ile_klientow;
@@ -394,6 +426,7 @@ int main()
                         break;
                     }
 
+                    // Wypozycz samochod
                     case '2': {
                         string pesel;
 
@@ -408,6 +441,7 @@ int main()
                         break;
                     }
 
+                    // Zwroc samochod
                     case '3': {
                         string pesel;
 
@@ -421,6 +455,19 @@ int main()
                         }
                         break;
                     }
+
+                    // Wstecz
+                    case '4': {
+                        // co tu dac?
+                        break;
+                    }
+                    default: {
+                        cout << "Podano niepoprawna wartosc!" << endl << endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
+                        break;
+                    }
+                    break;
                     }
                 }
                 else {
@@ -429,16 +476,15 @@ int main()
                     if (proba < 3) {
                         cout << "Pozostale proby: " << 3 - proba << '\n';
                     }
+                }                 
+
+                // Czyszczenie ekranu
+                system("cls");
+            }
+            break;
         }
 
-        
-            
-
-        // Czyszczenie ekranu
-            system("cls");
-    }
-        break;
-            }
+        // Wyjscie -> Potwierdzenie
         case '3': {
             system("cls");
 
