@@ -116,7 +116,7 @@ void wyswietlanie()
 
 int samochody_osobowe::ile_aut_w_pliku() {
     std::fstream plik;
-    plik.open("samochody_osobowe", std::ios::in);
+    plik.open("samochody_osobowe.txt", std::ios::in);
 
     int licznik = 0;
     string linia;

@@ -1,2 +1,167 @@
-﻿  Wypozyczalnia samochodow.cpp
-  Wypozyczalnia samochodow.vcxproj -> C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\x64\Debug\Wypozyczalnia samochodow.exe
+﻿  Samochody.cpp
+  samochody_dostawcze.cpp
+  samochody_osobowe.cpp
+  Wypozyczalnia samochodow.cpp
+C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15): error C2259: „Samochody”: nie można utworzyć wystąpienia klasy abstrakcyjnej
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(11,7):
+  zobacz deklarację „Samochody”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  z powodu następujących składowych:
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::wczytywanie(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(23,18):
+  zobacz deklarację „Samochody::wczytywanie”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::zapis_do_pliku(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(24,18):
+  zobacz deklarację „Samochody::zapis_do_pliku”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::wyswietl(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(25,18):
+  zobacz deklarację „Samochody::wyswietl”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::dodawanie(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(26,18):
+  zobacz deklarację „Samochody::dodawanie”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::dodawanie_auta(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(27,18):
+  zobacz deklarację „Samochody::dodawanie_auta”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "void Samochody::wyswietlanie(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(28,18):
+  zobacz deklarację „Samochody::wyswietlanie”
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(26,15):
+  "int Samochody::ile_aut_w_pliku(void)": jest abstrakcyjna
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Samochody.h(29,17):
+  zobacz deklarację „Samochody::ile_aut_w_pliku”
+  
+C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,33): error C2665: „std::vector<Samochody,std::allocator<Samochody>>::erase”: żadna przeciążona funkcja nie może przekonwertować wszystkich typów argumentów
+  F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(1724,27):
+  może to być „std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>) noexcept(<expr>)”
+          with
+          [
+              _Ty=Samochody
+          ]
+  	C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,33):
+  	„std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>) noexcept(<expr>)”: nie można dokonać konwersji argumentu 1 z „int” do „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>”
+          with
+          [
+              _Ty=Samochody
+          ]
+  		C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  		„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator”: żadna przeciążona funkcja nie może przekonwertować wszystkich typów argumentów
+          with
+          [
+              _Ty=Samochody
+          ]
+  			F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(221,1):
+  			może to być „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&)”
+          with
+          [
+              _Ty=Samochody
+          ]
+  				C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  				„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&)”: nie można dokonać konwersji argumentu 1 z „int” do „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&”
+          with
+          [
+              _Ty=Samochody
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  					Przyczyna: nie można skonwertować z "int" na "std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>"
+          with
+          [
+              _Ty=Samochody
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  					Konwersja wymaga drugiego operatora konwersji zdefiniowanego przez użytkownika lub konstruktora
+  			F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(221,1):
+  			lub       "std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &)"
+          with
+          [
+              _Ty=Samochody
+          ]
+  				C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  				„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &)”: nie można dokonać konwersji argumentu 1 z „int” do „const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &”
+          with
+          [
+              _Ty=Samochody
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  					Przyczyna: nie można skonwertować z "int" na "const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>"
+          with
+          [
+              _Ty=Samochody
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  					Konwersja wymaga drugiego operatora konwersji zdefiniowanego przez użytkownika lub konstruktora
+  			C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,40):
+  			podczas próby dopasowania listy argumentów "(int)"
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(147,33):
+  podczas próby dopasowania listy argumentów "(int)"
+  
+C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,40): error C2665: „std::vector<samochody_dostawcze,std::allocator<samochody_dostawcze>>::erase”: żadna przeciążona funkcja nie może przekonwertować wszystkich typów argumentów
+  F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(1724,27):
+  może to być „std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>) noexcept(<expr>)”
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  	C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,40):
+  	„std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> std::vector<_Ty,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>) noexcept(<expr>)”: nie można dokonać konwersji argumentu 1 z „int” do „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>”
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  		C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  		„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator”: żadna przeciążona funkcja nie może przekonwertować wszystkich typów argumentów
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  			F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(221,1):
+  			może to być „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&)”
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  				C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  				„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&)”: nie można dokonać konwersji argumentu 1 z „int” do „std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &&”
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  					Przyczyna: nie można skonwertować z "int" na "std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>"
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  					Konwersja wymaga drugiego operatora konwersji zdefiniowanego przez użytkownika lub konstruktora
+  			F:\Visual Studio IDE\VC\Tools\MSVC\14.38.33130\include\vector(221,1):
+  			lub       "std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &)"
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  				C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  				„std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::_Vector_const_iterator(const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &)”: nie można dokonać konwersji argumentu 1 z „int” do „const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &”
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  					Przyczyna: nie można skonwertować z "int" na "const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>"
+          with
+          [
+              _Ty=samochody_dostawcze
+          ]
+  					C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  					Konwersja wymaga drugiego operatora konwersji zdefiniowanego przez użytkownika lub konstruktora
+  			C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,47):
+  			podczas próby dopasowania listy argumentów "(int)"
+  C:\Users\Mateusz\Inne\Desktop\Projekt-wypozyczalnia-samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow\Wypozyczalnia samochodow.cpp(221,40):
+  podczas próby dopasowania listy argumentów "(int)"
+  
+  Generowanie kodu...

@@ -7,6 +7,7 @@
 #include "Klienci.h"
 #include "Samochody.h"
 #include "samochody_dostawcze.h"
+#include "Samochody_osobowe.h"
 
 using std::cout;
 using std::cin;
@@ -71,25 +72,26 @@ int main()
         system("cls");  // czysci ekran, zeby na pustym ekranie wypisac menu glowne
 
         cout << "---- MENU GLOWNE ----" << endl;
-        cout << "1. Samochody." << endl;
+        cout << "1. Admin." << endl;
         cout << "2. Klienci." << endl;
         cout << "3. Wyjscie." << endl;
         cout << "Podaj liczbe: ";
         cin >> wybor;
 
         switch (wybor) {
-        case '1':
+        case '1': {
             system("cls");  // czysci ekran, zeby na pustym ekranie wypisac menu samochodow a nie pod menu glownym
 
             char wybor_samochody;
             cout << "---- MENU SAMOCHODY ----" << endl;
             cout << "1. Samochody osobowe." << endl;
             cout << "2. Samochody dostawcze." << endl;
+            cout << "3. Wstecz." << endl;
             cout << "Podaj liczbe: ";
             cin >> wybor_samochody;
 
             switch (wybor_samochody) {
-            case '1':
+            case '1': {
                 system("cls");
 
                 char wybor_sam_osobowe;
@@ -106,45 +108,64 @@ int main()
                 case '1': {
                     system("cls");
 
-                    string tab;
+                    string tablica;
 
                     cout << "---- WYSWIETLANIE DANYCH SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
-                    cin >> tab;
+                    cin >> tablica;
 
                     for (int i = 0; i < ile_aut; i++) {
-                        if (tab == auta[i].tablica) {
+                        if (tablica == auta[i].tablica) {
                             auta[i].wyswietl();
                         }
                     }
                     break;
                 }
 
-                    case '2':
-                        system("cls");
+                case '2': {
+                    system("cls");
 
-                        cout << "---- DODAWANIE SAMOCHODU ----" << endl;
+                    cout << "---- DODAWANIE SAMOCHODU ----" << endl;
 
-                        obiekt_pom_auta.dodawanie();
-                        auta.push_back(obiekt_pom_auta);
-                        ile_aut++;
-                        break;
+                    obiekt_pom_auta.dodawanie();
+                    auta.push_back(obiekt_pom_auta);
+                    ile_aut++;
+                    break;
+                }
 
-                    case '3':
-                        system("cls");
+                case '3': {
+                    system("cls");
 
-                        cout << "---- USUWANIE SAMOCHODU ----" << endl;
+                    string tablica;
 
-                        // funkcja usuwania z wektora
-                        break;
+                    cout << "---- USUWANIE SAMOCHODU ----" << endl;
+                    cout << "Podaj tablice samochodu: ";
+                    cin >> tablica;
 
-                    case '4':
-                        cout << "Ilosc samochodow: " << ile_aut;
-                        break;
+                    for (int i = 0; i < ile_aut; i++) {
+                        if (tablica == auta[i].tablica) {
+                            auta.erase(i);
+                            ile_aut--;
+                        }
+                    }
+                    break;
+                }
+
+                case '4': {
+                    cout << "Ilosc samochodow: " << ile_aut;
+                    break;
+                }
+                case '5': {
+                    // co tu dac?
+                }
+                    defaulf: {
+                        cout << "Podano niepoprawna wartosc!";
+                }
                 }
                 break;
+            }
 
-            case '2':
+            case '2': {
                 system("cls");
 
                 char wybor_sam_dostawcze;
@@ -175,30 +196,58 @@ int main()
                     break;
                 }
 
-                    case '2':
-                        system("cls");
+                case '2': {
+                    system("cls");
 
-                        cout << "---- DODAWANIE SAMOCHODU ----" << endl;
+                    cout << "---- DODAWANIE SAMOCHODU ----" << endl;
 
-                        obiekt_pom_dostawczaki.dodawanie();
-                        dostawczaki.push_back(obiekt_pom_dostawczaki);
-                        ile_aut++;
-                        break;
+                    obiekt_pom_dostawczaki.dodawanie();
+                    dostawczaki.push_back(obiekt_pom_dostawczaki);
+                    ile_aut++;
+                    break;
+                }
 
-                    case '3':
-                        system("cls");
+                case '3': {
+                    system("cls");
 
-                        cout << "---- USUWANIE SAMOCHODU ----" << endl;
+                    string tablica;
 
-                        // funkcja usuwania z wektora
-                        break;
+                    cout << "---- USUWANIE SAMOCHODU ----" << endl;
+                    cout << "Podaj tablice samochodu: ";
+                    cin >> tablica;
 
-                    case '4':
-                        cout << "Ilosc samochodow: " << ile_aut;
-                        break;
+                    for (int i = 0; i < ile_dostawczakow; i++) {
+                        if (tablica == dostawczaki[i].tablica) {
+                            dostawczaki.erase(i);
+                            ile_dostawczakow--;
+                        }
+                    }
+                    break;
+                }
+
+                case '4': {
+                    cout << "Ilosc samochodow: " << ile_aut;
+                    break;
+                }
+                case '5': {
+                    // co tu dac?
+                }
+                default: {
+                    cout << "Podano niepoprawna wartosc!";
+                    break;
+                }
                 }
             }
-        case '2':
+            case '3': {
+                // co tu dac?
+            }
+            default: {
+                cout << "Podano niepoprawna wartosc!";
+                break;
+            }
+            }
+        }
+        case '2': {
             system("cls");
 
             char wybor_klienci;
@@ -230,72 +279,89 @@ int main()
                 break;
             }
 
-                case '2':
-                    system("cls");
+            case '2':
+                system("cls");
 
-                    cout << "---- DODAWANIE KLIENTA ----" << endl;
+                cout << "---- DODAWANIE KLIENTA ----" << endl;
 
-                    obiekt_pom_klienci.Dodawanie_klienta();
-                    klienci.push_back(obiekt_pom_klienci);
-                    ile_klientow++;
-                    break;
+                obiekt_pom_klienci.Dodawanie_klienta();
+                klienci.push_back(obiekt_pom_klienci);
+                ile_klientow++;
+                break;
 
-                case '3':
-                    system("cls");
+            case '3':
+                system("cls");
 
-                    cout << "---- USUWANIE KLIENTA ----" << endl;
+                cout << "---- USUWANIE KLIENTA ----" << endl;
 
-                    // funkcja usuwania z wektora
-                    break;
+                // funkcja usuwania z wektora
+                break;
 
-                case '4':
-                    cout << "Ilosc klientow: " << ile_klientow;
-                    break;
+            case '4':
+                cout << "Ilosc klientow: " << ile_klientow;
+                break;
 
-                case '5': {
-                    string pesel;
-                    
-                    cout << "Podaj PESEL klienta: ";
-                    cin >> pesel;
+            case '5': {
+                string pesel;
 
-                    for (int i = 0; i < ile_klientow; i++) {
-                        if (pesel == klienci[i].pesel) {
-                            klienci[i].wypozyczenie();
-                        }
+                cout << "Podaj PESEL klienta: ";
+                cin >> pesel;
+
+                for (int i = 0; i < ile_klientow; i++) {
+                    if (pesel == klienci[i].pesel) {
+                        klienci[i].wypozyczenie();
                     }
-                    break;
                 }
+                break;
+            }
 
-                case '6': {
-                    string pesel;
-                    
-                    cout << "Podaj PESEL klienta: ";
-                    cin >> pesel;
+            case '6': {
+                string pesel;
 
-                    for (int i = 0; i < ile_klientow; i++) {
-                        if (pesel == klienci[i].pesel) {
-                            klienci[i].oddanie();
-                        }
+                cout << "Podaj PESEL klienta: ";
+                cin >> pesel;
+
+                for (int i = 0; i < ile_klientow; i++) {
+                    if (pesel == klienci[i].pesel) {
+                        klienci[i].oddanie();
                     }
-                    break;
                 }
+                break;
+            }
             }
         }
+        case '3': {
+            system("cls");
+
+            char wybor_wyjscie;
+
+            cout << "Czy na pewno chcesz zamknac program?" << endl;
+            cout << "1. Tak." << endl;
+            cout << "2. Nie." << endl;
+            cin >> wybor_wyjscie;
+
+            switch (wybor_wyjscie) {
+            case '1': {
+                wybor = 3;
+                break;
+            }
+            case '2': {
+                wybor = 1;
+                break;
+            }
+            default: {
+                cout << "Podano niepoprawny numer!";
+                wybor = 1;
+                break;
+            }
+            }
+        }
+            deault: {
+                cout << "Podano niepoprawny numer!";
+                break;
+        }
+        }
     }
-
-    /*
-    obiekt.ktory_samochod = 1;
-    obiekt.wczytywanie();
-    auta.push_back(obiekt);
-    auta[0].wyswietl();
-    */
-
-
-    /*
-    Samochody obiekt;
-    obiekt.wczytywanie();
-    obiekt.wyswietl();
-    */
 
     // zapis samochodow do pliku
     // czysci plik, do ktorego beda zapisywane dane
