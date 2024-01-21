@@ -18,6 +18,7 @@ void samochody_dostawcze::wczytywanie()
             if (licznik == nr_linii + 2) tablica = linia;
             if (licznik == nr_linii + 3) typ_paliwa = linia;
             if (licznik == nr_linii + 4) pojemnosc_samochodu = linia;
+            if (licznik == nr_linii + 5) dostepnosc = linia;
             licznik++;
         }
     }
@@ -37,6 +38,7 @@ void samochody_dostawcze::zapis_do_pliku() {
     plik << tablica << std::endl;
     plik << typ_paliwa << std::endl;
     plik << pojemnosc_samochodu << std::endl;
+    plik << dostepnosc << std::endl;
 
     plik.close();
 }
@@ -49,6 +51,7 @@ void samochody_dostawcze::wyswietl()
     cout << "Tablia: " << tablica << '\n';
     cout << "Typ paliwa: " << typ_paliwa << '\n';
     cout << "Pojemnosc auta w litrach: " << pojemnosc_samochodu << '\n';
+    cout << "Dostepnosc samochodu: " << dostepnosc << '\n';
 }
 
 void samochody_dostawcze::dodawanie()
@@ -65,6 +68,8 @@ void samochody_dostawcze::dodawanie()
     cin >> typ_paliwa;
     cout << "Podaj pojemnosc samochodu w litrach: ";
     cin >> pojemnosc_samochodu;
+    cout << "Dostepnosc: ";
+    cin >> dostepnosc;
 
     plik.open("samochodydostawcze.txt", std::ios::out | std::ios::app);
 
@@ -73,6 +78,7 @@ void samochody_dostawcze::dodawanie()
     plik << tablica << '\n';
     plik << typ_paliwa << '\n';
     plik << pojemnosc_samochodu << '\n';
+    plik << dostepnosc << '\n';
 
     plik.close();
 }

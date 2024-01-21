@@ -55,3 +55,10 @@ Admin dodal samochod dostawczy! 	ID: hfhh	2024-01-21 22:04:00
 Admin dodal samochod dostawczy! 	ID: sfsg	2024-01-21 22:09:03
 Wyswietlono ilosc samochodow! 	2024-01-21 22:25:43
 Wyswietlono samochod dostawczy! 	hfush2024-01-21 22:29:51
+Wyswietlono dane samochodu osobowego! 	ID: WPL90KA	2024-01-21 22:32:28
+Wyswietlono samochod dostawczy! 	KASDK992024-01-21 22:32:28
+Wyswietlono samochod dostawczy! 	KASDK992024-01-21 22:32:28
+Wyswietlono ilosc samochodow! 	2024-01-21 22:32:28
+Wyswietlono ilosc samochodow! 	2024-01-21 22:37:56
+Wyswietlono ilosc samochodow! 	2024-01-21 22:39:45
+Wyswietlono ilosc samochodow! 	2024-01-21 22:39:45
