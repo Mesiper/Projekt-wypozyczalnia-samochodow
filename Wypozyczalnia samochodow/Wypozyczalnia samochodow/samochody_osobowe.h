@@ -22,15 +22,16 @@ public:
     int moc;
     int rocznik;
     int ilosc_miejsc;
-    bool dostepnosc;
     */
+    string dostepnosc;
+    
     int ktory_samochod;
 
     /* stala okreslajaca ilosc atrybutow, zeby nie trzeba bylo liczby wpisywac,
     * tylko mozna zmienna (przydatne bardziej przy testach)
     * static oznacza, ze wartosc zmiennej jest taka sama
     * dla wszystkich obiektow tej klasy */
-    const static int ilosc_atrybutow = 4;
+    const static int ilosc_atrybutow = 5;
 
     void wczytywanie() ;
     void zapis_do_pliku() ;

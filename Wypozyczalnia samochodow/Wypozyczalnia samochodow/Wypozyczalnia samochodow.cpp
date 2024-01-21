@@ -265,7 +265,7 @@ int main()
             cout << "1. Wyswietl dane klienta." << endl;
             cout << "2. Dodaj klienta." << endl;
             cout << "3. Usun klienta." << endl;
-            cout << "4. Podaj ilosc klientow." << endl;
+            cout << "4. Wyswietl Liczbe klientow." << endl;
             cout << "5. Wypozycz samochod." << endl;
             cout << "6. Zwroc samochod." << endl;
             wybor_klienci = _getch();

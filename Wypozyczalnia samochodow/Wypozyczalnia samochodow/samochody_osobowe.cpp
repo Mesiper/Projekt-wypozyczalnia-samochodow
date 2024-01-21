@@ -17,6 +17,7 @@ void samochody_osobowe::wczytywanie()
             if (licznik == nr_linii + 1) model = linia;
             if (licznik == nr_linii + 2) tablica = linia;
             if (licznik == nr_linii + 3) typ_paliwa = linia;
+            if (licznik == nr_linii + 4) dostepnosc = linia;
             licznik++;
         }
     }
@@ -35,6 +36,7 @@ void samochody_osobowe::zapis_do_pliku() {
     plik << model << std::endl;
     plik << tablica << std::endl;
     plik << typ_paliwa << std::endl;
+    plik << dostepnosc << std::endl;
 
     plik.close();
 }
@@ -46,6 +48,7 @@ void samochody_osobowe::wyswietl()
     cout << "Model: " << model << '\n';
     cout << "Tablia: " << tablica << '\n';
     cout << "Typ paliwa: " << typ_paliwa << '\n';
+    cout << "Dostepnosc samochodu: " << dostepnosc << '\n';
 }
 
 
@@ -61,6 +64,8 @@ void samochody_osobowe::dodawanie()
     cin >> tablica;
     cout << "Podaj typ paliwa: ";
     cin >> typ_paliwa;
+    cout << "Dostepnosc: ";
+    cin >> dostepnosc;
 
     plik.open("samochody_osobowe.txt", std::ios::out | std::ios::app);
 
@@ -68,6 +73,7 @@ void samochody_osobowe::dodawanie()
     plik << model << '\n';
     plik << tablica << '\n';
     plik << typ_paliwa << '\n';
+    plik << typ_paliwa << '\n';;
 
     plik.close();
 }
