@@ -31,8 +31,8 @@ public:
     void Dodawanie_klienta();
     void wyswietldane();
     void czyposiadasamochod();
-    void wypozyczenie(string rejestracja);
-    void oddanie(string rejestracja);
+    void wypozyczenie(string pesel);
+    void oddanie(string pesel);
     int ile_klientow_w_pliku();
     bool logowanie(string pesel, string haslo);
 };

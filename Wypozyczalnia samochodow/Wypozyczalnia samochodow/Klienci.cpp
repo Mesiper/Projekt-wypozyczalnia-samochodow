@@ -30,7 +30,7 @@ void Klienci::wczytywanie() {
 
 void Klienci::zapis_do_pliku() {
     std::fstream plik;
-    plik.open("klienci1.txt", std::ios::out | std::ios::app);
+    plik.open("klienci.txt", std::ios::out | std::ios::app);
 
     plik << imie << std::endl;
     plik << nazwisko << std::endl;
@@ -49,7 +49,7 @@ void Klienci::Dodawanie_klienta() {
     cin >> pesel;
     cout << "Podaj haslo\n";
     cin >> haslo;
-    cout << "Podaj haslo\n";
+    cout << "Podaj czy posiada samochod\n";
     cin >> posiadanysamochod;
     std::fstream plik;
     plik.open("klienci.txt", std::ios::out | std::ios::app);
