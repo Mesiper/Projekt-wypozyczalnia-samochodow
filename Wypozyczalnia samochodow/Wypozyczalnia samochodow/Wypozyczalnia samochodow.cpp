@@ -10,11 +10,15 @@
 #include "Samochody.h"
 #include "samochody_dostawcze.h"
 #include "samochody_osobowe.h"
+#include <chrono>;
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+
+std::ofstream raport;
+
 
 void wyczysc_plik(string nazwa_pliku) {
     std::fstream plik;
@@ -22,8 +26,28 @@ void wyczysc_plik(string nazwa_pliku) {
     plik.close();
 }
 
+std::string pobierzSformatowanyCzas() {
+    // Pobranie aktualnego czasu
+    auto teraz = std::chrono::system_clock::now();
+
+    // Konwersja czasu na std::time_t
+    auto czas_strukt = std::chrono::system_clock::to_time_t(teraz);
+
+    // Bezpieczne użycie funkcji localtime_s
+    std::tm czas_tm;
+    localtime_s(&czas_tm, &czas_strukt);
+
+    // Formatowanie daty i godziny
+    char czas_sformatowany[20];
+    std::strftime(czas_sformatowany, sizeof(czas_sformatowany), "%F %T", &czas_tm);
+
+    return czas_sformatowany;
+}
 int main()
 {
+
+    raport.open("raport.txt", std::ios::app);
+    string sformatowanyCzas = pobierzSformatowanyCzas();
     std::vector <samochody_osobowe> auta; // kontener (wektor) na samochody
     samochody_osobowe obiekt_pom_auta;
 
@@ -122,6 +146,7 @@ int main()
                             Sleep(2000);
                         }
                     }
+                    raport << "Wyswietlono dane samochodu osobowego! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
                 }
 
@@ -129,12 +154,13 @@ int main()
                     system("cls");
 
                     cout << "---- DODAWANIE SAMOCHODU ----" << endl;
-
                     obiekt_pom_auta.dodawanie();
                     auta.push_back(obiekt_pom_auta);
                     ile_aut++;
+                    raport << "Admin dodal samochod! " << '\t' << "ID: " << auta[ile_aut-1].tablica <<'\t' << sformatowanyCzas << std::endl;
                     break;
                 }
+
 
                 case '3': {
                     system("cls");
@@ -144,7 +170,7 @@ int main()
                     cout << "---- USUWANIE SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tablica;
-
+                    raport << "Admin usunal samochod! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
                             auta.erase(auta.begin()+i);
@@ -157,6 +183,7 @@ int main()
                 case '4': {
                     system("cls");
                     cout << "Ilosc samochodow: " << ile_aut;
+                    raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
                     Sleep(2000);
                     break;
                 }
@@ -192,7 +219,7 @@ int main()
                     cout << "---- WYSWIETLANIE DANYCH SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tab1;
-
+                    raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tab1 == dostawczaki[i].tablica) {
                             dostawczaki[i].wyswietl();
@@ -206,10 +233,10 @@ int main()
                     system("cls");
 
                     cout << "---- DODAWANIE SAMOCHODU ----" << endl;
-
                     obiekt_pom_dostawczaki.dodawanie();
                     dostawczaki.push_back(obiekt_pom_dostawczaki);
                     ile_aut++;
+                    raport << "Admin dodal samochod dostawczy! " << '\t' << "ID: " << dostawczaki[ile_dostawczakow - 1].tablica << '\t' << sformatowanyCzas << std::endl;
                     break;
                 }
 
@@ -221,7 +248,7 @@ int main()
                     cout << "---- USUWANIE SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tablica;
-
+                    raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tablica == dostawczaki[i].tablica) {
                             dostawczaki.erase(dostawczaki.begin()+i);
@@ -233,6 +260,7 @@ int main()
 
                 case '4': {
                     system("cls");
+                    raport << "Wyswietlono ilosc samochodow dostawczych!" << '\t'<< sformatowanyCzas << std::endl;
                     cout << "Ilosc samochodow: " << ile_dostawczakow;
                     Sleep(2000);
                     break;
@@ -279,7 +307,7 @@ int main()
                 cout << "---- WYSWIETLANIE DANYCH KLIENTA ----" << endl;
                 cout << "Podaj PESEL klienta: ";
                 cin >> pesel;
-
+                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci[i].wyswietldane();
@@ -297,6 +325,7 @@ int main()
                 obiekt_pom_klienci.Dodawanie_klienta();
                 klienci.push_back(obiekt_pom_klienci);
                 ile_klientow++;
+                raport << "Dodano klienta! " << '\t' << "ID: " << klienci[ile_klientow - 1].imie << '\t' << sformatowanyCzas << std::endl;
                 break;
             }
 
@@ -308,7 +337,7 @@ int main()
                 cout << "---- USUWANIE KLIENTA ----" << endl;
                 cout << "Podaj pesel: ";
                 cin >> pesel;
-
+                raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci.erase(klienci.begin() + i);
@@ -321,6 +350,7 @@ int main()
             case '4': {
                 system("cls");
                 cout << "Ilosc klientow: " << ile_klientow;
+                raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
                 Sleep(2000);
                 break;
             }
