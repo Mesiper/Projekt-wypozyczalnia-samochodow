@@ -73,7 +73,7 @@ void samochody_osobowe::dodawanie()
     plik << model << '\n';
     plik << tablica << '\n';
     plik << typ_paliwa << '\n';
-    plik << typ_paliwa << '\n';;
+    plik << dostepnosc << '\n';
 
     plik.close();
 }

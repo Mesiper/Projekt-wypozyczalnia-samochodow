@@ -42,3 +42,16 @@ Wyswietlono dane samochodu osobowego! 	ID: WSC59X2	2024-01-21 19:54:50
 Wyswietlono samochod dostawczy! 	f2024-01-21 20:03:11
 Wyswietlono samochod dostawczy! 	f2024-01-21 20:30:52
 Wyswietlono samochod dostawczy! 	f2024-01-21 20:32:19
+Admin dodal samochod! 	ID: WG123XD	2024-01-21 21:43:56
+Admin dodal samochod! 	ID: 312e12	2024-01-21 21:45:39
+Admin usunal samochod! 	ID: 312e12	2024-01-21 21:47:17
+Wyswietlono dane samochodu osobowego! 	ID: WSC55532	2024-01-21 21:52:22
+Wyswietlono dane samochodu osobowego! 	ID: WSC55532	2024-01-21 21:55:14
+Wyswietlono dane samochodu osobowego! 	ID: hfshi	2024-01-21 21:55:14
+Wyswietlono samochod dostawczy! 	sdf2024-01-21 21:55:14
+Wyswietlono samochod dostawczy! 	bfsb2024-01-21 21:57:03
+Admin dodal samochod! 	ID: bryufwu	2024-01-21 22:04:00
+Admin dodal samochod dostawczy! 	ID: hfhh	2024-01-21 22:04:00
+Admin dodal samochod dostawczy! 	ID: sfsg	2024-01-21 22:09:03
+Wyswietlono ilosc samochodow! 	2024-01-21 22:25:43
+Wyswietlono samochod dostawczy! 	hfush2024-01-21 22:29:51

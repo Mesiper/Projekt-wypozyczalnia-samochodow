@@ -148,18 +148,23 @@ int main()
                     cout << "Podaj tablice samochodu: ";
                     cin >> tablica;
 
+                    bool czy_jest = false;
+
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
                             auta[i].wyswietl();
                             cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                             _getch();
+                            czy_jest = true;
+                            raport << "Wyswietlono dane samochodu osobowego! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                         }
                     }
-                    cout << "Brak samochodu w bazie! " << endl << endl;
-                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
-                    _getch();
 
-                    raport << "Wyswietlono dane samochodu osobowego! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
+                    if (czy_jest == false) {
+                        cout << "Brak samochodu w bazie! " << endl << endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
+                    }
                     break;
                 }
 
@@ -171,8 +176,10 @@ int main()
                     obiekt_pom_auta.dodawanie();
                     auta.push_back(obiekt_pom_auta);
                     ile_aut++;
-                    cout << "Samochod dodany! " << "ID: " << auta[ile_aut - 1].tablica << std::endl;
+                    cout << "Samochod dodany! " << "ID: " << auta[auta.size()-1].tablica << std::endl;
+                    cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                     raport << "Admin dodal samochod! " << '\t' << "ID: " << auta[ile_aut-1].tablica <<'\t' << sformatowanyCzas << std::endl;
+                    _getch();
                     break;
                 }
 
@@ -185,11 +192,11 @@ int main()
                     cout << "---- USUWANIE SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tablica;
-                    raport << "Admin usunal samochod! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
                             auta.erase(auta.begin()+i);
                             ile_aut--;
+                            raport << "Admin usunal samochod! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                         }
                     }
                     break;
@@ -200,17 +207,18 @@ int main()
                     system("cls");
                     cout << "Ilosc samochodow: " << ile_aut;
                     raport << "Wyswietlono ilosc Samochodow! " << '\t' << sformatowanyCzas << std::endl;
-                    Sleep(2000);
+                    _getch();
                     break;
                 }
 
                 // Wstecz
                 case '5': {
-                    // co tu dac?
                     break;
                 }
                     default: {
-                        cout << "Podano niepoprawna wartosc!";
+                        cout << "Podano niepoprawna wartosc!" << endl << endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
                         break;
                 }
                 }
@@ -239,6 +247,8 @@ int main()
 
                     string tab1;
 
+                    bool czy_jest = false;
+
                     cout << "---- WYSWIETLANIE DANYCH SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tab1;
@@ -248,8 +258,17 @@ int main()
                             dostawczaki[i].wyswietl();
                             cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                             _getch();
+                            czy_jest = true;
+                            raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;
                         }
                     }
+
+                    if (czy_jest == false) {
+                        cout << "Brak samochodu w bazie! " << endl << endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
+                    }
+
                     break;
                 }
 
@@ -263,6 +282,8 @@ int main()
                     ile_dostawczakow++;
                     cout << "Samochod dodany! " << "ID: " << dostawczaki[ile_dostawczakow - 1].tablica << std::endl;
                     raport << "Admin dodal samochod dostawczy! " << '\t' << "ID: " << dostawczaki[ile_dostawczakow - 1].tablica << '\t' << sformatowanyCzas << std::endl;
+                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                    _getch();
                     break;
                 }
 
@@ -279,9 +300,10 @@ int main()
                         if (tablica == dostawczaki[i].tablica) {
                             dostawczaki.erase(dostawczaki.begin()+i);
                             ile_dostawczakow--;
+                            raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                         }
                     }
-                    raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
+                    
                     break;
                 }
 
@@ -289,8 +311,9 @@ int main()
                 case '4': {
                     system("cls");
                     raport << "Wyswietlono ilosc samochodow dostawczych!" << '\t'<< sformatowanyCzas << std::endl;
-                    cout << "Ilosc samochodow: " << ile_dostawczakow;
-                    Sleep(2000);
+                    cout << "Ilosc samochodow: " << ile_dostawczakow << endl << endl;
+                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                    _getch();
                     break;
                 }
 
@@ -299,7 +322,9 @@ int main()
                     break;
                 }
                 default: {
-                    cout << "Podano niepoprawna wartosc!";
+                    cout << "Podano niepoprawna wartosc!" << endl << endl;
+                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                    _getch();
                     break;
                 }
                 break;
@@ -333,9 +358,9 @@ int main()
                     if (pesel == klienci[i].pesel) {
                         klienci.erase(klienci.begin() + i);
                         ile_klientow--;
+                        raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                     }
                 }
-                raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
             }
 
@@ -352,10 +377,10 @@ int main()
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci[i].wyswietldane();
-                        Sleep(2000);
+                        _getch();
+                        raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                     }
                 }
-                raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                 break;
 
             }
@@ -365,17 +390,18 @@ int main()
                 system("cls");
                 cout << "Ilosc klientow: " << ile_klientow;
                 raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
-                Sleep(2000);
+                _getch();
                 break;
             }
             
             // Wstecz
             case '7': {
-                // co tu dac?
                 break;
             }
             default: {
-                cout << "Podano niepoprawna wartosc!";
+                cout << "Podano niepoprawna wartosc!" << endl;
+                cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                _getch();
                 break;
             }
             }
@@ -409,7 +435,7 @@ int main()
 
                     cout << "---- MENU KLIENCI ----" << endl;
                     
-                    cout << "1. Wyswietl Liczbe samochodow." << endl;// tu bedzie wyswietlala sie liczba samochodow
+                    cout << "1. Wyswietl wszystkie samochody." << endl;// tu bedzie wyswietlala sie liczba samochodow
                     cout << "2. Wypozycz samochod." << endl;
                     cout << "3. Zwroc samochod." << endl;
                     cout << "4. Wstecz." << endl;
@@ -420,9 +446,16 @@ int main()
                     // 
                     case '1': {
                         system("cls");
-                        cout << "Ilosc klientow: " << ile_klientow;
-                        raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
-                        Sleep(2000);
+
+                        for (int i = 0; i < ile_aut; i++) {
+                            auta[i].wyswietl();
+                        }
+                        for (int i = 0; i < ile_dostawczakow; i++) {
+                            dostawczaki[i].wyswietl();
+                        }
+                        raport << "Wyswietlono ilosc samochodow! " << '\t' << sformatowanyCzas << std::endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
                         break;
                     }
 
@@ -458,7 +491,6 @@ int main()
 
                     // Wstecz
                     case '4': {
-                        // co tu dac?
                         break;
                     }
                     default: {
@@ -511,28 +543,6 @@ int main()
                 break;
             }
             }
-            break;
-        }
-        case '4': {
-            system("cls");
-            string pesel, haslo;
-            cout << "---- LOGOWANIE ----" << endl;
-            cout << "Podaj PESEL: ";
-            cin >> pesel;
-            cout << "Podaj haslo: ";
-            cin >> haslo;
-
-            if (obiekt_pom_klienci.logowanie(pesel, haslo)) {
-                cout << "Logowanie udane!" << endl;
-                // Dodaj kod obsługujący zalogowanego klienta
-                // np. wyświetlanie jego opcji, itp.
-            }
-            else {
-                cout << "Nieudane logowanie. Sprawdz PESEL i haslo, a nastepnie sprobuj ponownie." << endl;
-            }
-
-            // Dodaj opóźnienie i czyszczenie ekranu
-            Sleep(2000);
             break;
         }
         default: {
