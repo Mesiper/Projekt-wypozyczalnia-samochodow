@@ -11,6 +11,7 @@ using std::string;
 class samochody_osobowe :
     public Samochody
 {
+public:
     string marka;
     string model;
     string tablica;
@@ -31,14 +32,14 @@ class samochody_osobowe :
     * dla wszystkich obiektow tej klasy */
     const static int ilosc_atrybutow = 4;
 
-    void wczytywanie();
-    void zapis_do_pliku();
-    void wyswietl();
-    void dodawanie();
-    void dodawanie_auta();
-    void wyswietlanie();
-    int ile_aut_w_pliku();
-    void raport();
+    void wczytywanie() ;
+    void zapis_do_pliku() ;
+    void wyswietl() ;
+    void dodawanie() ;
+    //void dodawanie_auta() ;
+    //void wyswietlanie() ;
+    int ile_aut_w_pliku() ;
+    //void raport();
 
 
 };

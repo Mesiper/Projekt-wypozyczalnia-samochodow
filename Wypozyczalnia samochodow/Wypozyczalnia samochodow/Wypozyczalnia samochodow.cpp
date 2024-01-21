@@ -7,7 +7,7 @@
 #include "Klienci.h"
 #include "Samochody.h"
 #include "samochody_dostawcze.h"
-#include "Samochody_osobowe.h"
+#include "samochody_osobowe.h"
 
 using std::cout;
 using std::cin;
@@ -22,8 +22,8 @@ void wyczysc_plik(string nazwa_pliku) {
 
 int main()
 {
-    std::vector <Samochody> auta; // kontener (wektor) na samochody
-    Samochody obiekt_pom_auta;
+    std::vector <samochody_osobowe> auta; // kontener (wektor) na samochody
+    samochody_osobowe obiekt_pom_auta;
 
     /* zlicza ilosc aut w pliku tekstowym, zeby latwo w petli for wczytac
     * i wiedziec ktory to jest element do dodania do kontenera */
@@ -144,7 +144,7 @@ int main()
 
                     for (int i = 0; i < ile_aut; i++) {
                         if (tablica == auta[i].tablica) {
-                            auta.erase(i);
+                            auta.erase(auta.begin()+i);
                             ile_aut--;
                         }
                     }
@@ -218,7 +218,7 @@ int main()
 
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tablica == dostawczaki[i].tablica) {
-                            dostawczaki.erase(i);
+                            dostawczaki.erase(dostawczaki.begin()+i);
                             ile_dostawczakow--;
                         }
                     }

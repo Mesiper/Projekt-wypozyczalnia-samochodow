@@ -19,14 +19,14 @@ void Samochody::dodawanie() {
     // Implementacja dla klasy pochodnej
 }
 
-void Samochody::dodawanie_auta() {
+/*void Samochody::dodawanie_auta() {
     // Implementacja dla klasy pochodnej
 }
 
 void Samochody::wyswietlanie() {
     // Implementacja dla klasy pochodnej
 }
-
+*/
 int Samochody::ile_aut_w_pliku() {
     // Implementacja dla klasy pochodnej
     return 0;

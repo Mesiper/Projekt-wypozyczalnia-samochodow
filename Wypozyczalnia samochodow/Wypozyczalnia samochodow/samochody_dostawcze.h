@@ -19,10 +19,10 @@ public:
     void zapis_do_pliku();
     void wyswietl();
     void dodawanie();
-    void dodawanie_auta();
-    void wyswietlanie();
+    //void dodawanie_auta();
+    //void wyswietlanie();
     int ile_aut_w_pliku();
-    void raport();
+    //void raport();
 
 };
 

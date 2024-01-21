@@ -24,8 +24,8 @@ public:
     virtual void zapis_do_pliku() = 0;
     virtual void wyswietl() = 0;
     virtual void dodawanie() = 0;
-    virtual void dodawanie_auta() = 0;
-    virtual void wyswietlanie() = 0;
+    //virtual void dodawanie_auta() = 0;
+    //virtual void wyswietlanie() = 0;
     virtual int ile_aut_w_pliku() = 0;
 };
 
