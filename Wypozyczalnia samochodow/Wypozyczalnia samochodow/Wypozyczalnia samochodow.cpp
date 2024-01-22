@@ -491,6 +491,8 @@ int main()
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
                                                 auta[i].dostepnosc = "NIE";
+                                                raport << "Wypozyczono samochod! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
+
                                             }
 
                                             /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
@@ -510,8 +512,9 @@ int main()
 
                                                 /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                                                 _getch();
-                                                czy_jest = true;
-                                                raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;*/
+                                                czy_jest = true; 
+                                                */
+                                                raport << "Wypozyczono samochod! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
                                             }
                                         }
                                     }
@@ -560,14 +563,15 @@ int main()
                                                 klienci[nr_klienta].posiadanysamochod = "BRAK";
                                                 czy_jest1 = false;
                                                 auta[i].dostepnosc = "TAK";
+                                                raport << "Zwrocono samochod dostawczy! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
                                                 break;
                                             }
 
                                             /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                                             _getch();
                                             czy_jest = true;
-                                            raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;
                                             */
+                                           
                                         }
                                     }
 
@@ -578,14 +582,14 @@ int main()
                                                     cout << "Pomyslnie zwrociles samochod.";
                                                     czy_jest1 = false;
                                                     dostawczaki[i].dostepnosc = "TAK";
+                                                    raport << "Zwrocono samochod dostawczy! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
+
                                                     break;
                                                 }
 
                                                 /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                                                 _getch();
-                                                czy_jest = true;
-                                                raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;*/
-                                            }
+                                                czy_jest = true; */                                            }
                                         }
                                     }
 
@@ -597,12 +601,6 @@ int main()
                         }
                         cout << endl << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
-                        /*
-                        for (int i = 0; i < ile_klientow; i++) {
-                            if (pesel == klienci[i].pesel) {
-                                klienci[i].oddanie();
-                            }
-                        }*/
                         break;
                     }
 

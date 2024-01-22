@@ -71,3 +71,5 @@ Admin usunal samochod! 	ID: KK000K	2024-01-22 01:43:43
 Wyswietlono ilosc Samochodow! 	2024-01-22 01:47:00
 Wyswietlono ilosc samochodow! 	2024-01-22 01:47:00
 Admin dodal samochod! 	ID: LOL000	2024-01-22 11:02:45
+Wypozyczono samochod! 	ID: KA888JJJAPrzez: 12024-01-22 12:08:20
+Zwrocono samochod! 	ID: KA888JJJAPrzez: 12024-01-22 12:09:58
