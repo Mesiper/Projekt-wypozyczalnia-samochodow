@@ -11,7 +11,7 @@ TAK
 MAZDA
 MX5
 K8NORBI
-DIESEL
+ON
 TAK
 Bugatti
 Veyron
@@ -42,14 +42,9 @@ Telsa
 Cybertruck
 WD218XD
 ON
-ON
+TAK
 Tesla
 S
 WG123XD
 ON
-ON
-xd
-xd
-bryufwu
-BENZYNA
 TAK
