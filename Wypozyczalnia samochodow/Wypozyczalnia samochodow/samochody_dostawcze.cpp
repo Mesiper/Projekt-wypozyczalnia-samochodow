@@ -100,4 +100,6 @@ int samochody_dostawcze::ile_aut_w_pliku() {
     * wiec jesli jakis samochod nie ma wpisanych wszystkich danych
     * funkcja zwroci za malo samochodow */
     return licznik / ilosc_atrybutow;
+
+    
 }

@@ -24,6 +24,7 @@ public:
     //void wyswietlanie();
     int ile_aut_w_pliku();
     //void raport();
+    
 
 };
 

@@ -27,5 +27,6 @@ public:
     //virtual void dodawanie_auta() = 0;
     //virtual void wyswietlanie() = 0;
     virtual int ile_aut_w_pliku() = 0;
+    
 };
 

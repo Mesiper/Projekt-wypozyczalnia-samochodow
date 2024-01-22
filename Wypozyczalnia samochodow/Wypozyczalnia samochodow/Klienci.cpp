@@ -42,15 +42,15 @@ void Klienci::zapis_do_pliku() {
 }
 
 void Klienci::Dodawanie_klienta() {
-    cout << "Podaj imie\n";
+    cout << "Podaj imie: ";
     cin >> imie;
-    cout << "Podaj nazwisko\n";
+    cout << "Podaj nazwisko: ";
     cin >> nazwisko;
-    cout << "Podaj pesel\n";
+    cout << "Podaj pesel: ";
     cin >> pesel;
-    cout << "Podaj haslo\n";
+    cout << "Podaj haslo: ";
     cin >> haslo;
-    cout << "Podaj czy posiada samochod\n";
+    cout << "Podaj czy posiada samochod: ";
     cin >> posiadanysamochod;
     std::fstream plik;
     plik.open("klienci.txt", std::ios::out | std::ios::app);

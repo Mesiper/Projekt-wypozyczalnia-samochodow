@@ -80,3 +80,12 @@ Wyswietlono samochod dostawczy! 	WSC555322024-01-22 12:58:13
 Wyswietlono klienta! 	ID: 1	2024-01-22 12:58:13
 Wypozyczono samochod! 	ID: 	WSC55532Przez: 12024-01-22 13:27:47
 Zwrocono samochod dostawczy! 	ID: 	WSC55532Przez: 12024-01-22 13:27:47
+Wyswietlono ilosc samochodow dostawczych!	2024-01-22 14:00:15
+Wypozyczono samochod! 	ID: 	WSC55532Przez: 12024-01-22 14:00:15
+Admin dodal samochod dostawczy! 	ID: XD123XD	2024-01-22 14:00:15
+Dodano klienta! 	ID: xd	2024-01-22 14:11:39
+Dodano klienta! 	ID: 7891	2024-01-22 18:42:02
+Zwrocono samochod dostawczy! 	ID: 	WSC55532Przez: 12024-01-22 18:58:35
+Wyswietlono ilosc Samochodow! 	2024-01-22 19:33:02
+Wyswietlono ilosc samochodow dostawczych!	2024-01-22 19:33:02
+Wyswietlono ilosc Samochodow! 	2024-01-22 19:36:14

@@ -30,4 +30,6 @@ void Samochody::wyswietlanie() {
 int Samochody::ile_aut_w_pliku() {
     // Implementacja dla klasy pochodnej
     return 0;
-}
+
+}    
+

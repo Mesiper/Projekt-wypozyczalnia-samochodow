@@ -1,7 +1,4 @@
-﻿// Wypozyczalnia samochodow.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
-
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 #include <conio.h>
 #include <stdio.h>
@@ -18,7 +15,6 @@ using std::endl;
 using std::string;
 
 std::ofstream raport;
-
 
 void wyczysc_plik(string nazwa_pliku) {
     std::fstream plik;
@@ -61,7 +57,7 @@ int main()
         obiekt_pom_auta.ktory_samochod = i + 1;
         obiekt_pom_auta.wczytywanie();
         auta.push_back(obiekt_pom_auta);
-        auta[i].wyswietl(); // do sprawdzenia
+        //auta[i].wyswietl(); // do sprawdzenia
     }
 
     std::vector <Klienci> klienci; // kontener (wektor) na klientow
@@ -77,7 +73,7 @@ int main()
         obiekt_pom_klienci.ktory_klient = i + 1;
         obiekt_pom_klienci.wczytywanie();
         klienci.push_back(obiekt_pom_klienci);
-        klienci[i].wyswietldane();  // do sprawdzenia
+        //klienci[i].wyswietldane();  // do sprawdzenia
     }
 
     std::vector <samochody_dostawcze> dostawczaki; // kontener (wektor) na samochody
@@ -89,7 +85,7 @@ int main()
         obiekt_pom_dostawczaki.ktory_samochod = i + 1;
         obiekt_pom_dostawczaki.wczytywanie();
         dostawczaki.push_back(obiekt_pom_dostawczaki);
-        dostawczaki[i].wyswietl();  // do sprawdzenia
+        //dostawczaki[i].wyswietl();  // do sprawdzenia
     }
 
     char wybor = 1;
@@ -208,8 +204,9 @@ int main()
                 // Podaj ilosc samochodow
                 case '4': {
                     system("cls");
-                    cout << "Ilosc samochodow: " << ile_aut;
+                    cout << "Ilosc samochodow: " << ile_aut << endl << endl;
                     raport << "Wyswietlono ilosc Samochodow! " << '\t' << sformatowanyCzas << std::endl;
+                    cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
                     _getch();
                     break;
                 }
@@ -439,9 +436,6 @@ int main()
                 if (obiekt_pom_klienci.logowanie(pesel, haslo)) {
                     cout << "Logowanie udane!" << endl;
                     udaneLogowanie = true;
-                    // Dodaj kod obsługujący zalogowanego klienta
-                    // np. wyświetlanie jego opcji, itp.
-
 
                     system("cls");
 
@@ -449,7 +443,7 @@ int main()
 
                     cout << "---- MENU KLIENCI ----" << endl;
                     
-                    cout << "1. Wyswietl wszystkie samochody." << endl;// tu bedzie wyswietlala sie liczba samochodow
+                    cout << "1. Wyswietl wszystkie samochody." << endl;
                     cout << "2. Wypozycz samochod." << endl;
                     cout << "3. Zwroc samochod." << endl;
                     cout << "4. Wstecz." << endl;
@@ -457,7 +451,7 @@ int main()
                     wybor_klienci = _getch();
 
                     switch (wybor_klienci) {
-                    // 
+                    // Wyswietl wszystkie samochody
                     case '1': {
                         system("cls");
 
@@ -507,11 +501,6 @@ int main()
                                                 raport << "Wypozyczono samochod! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
 
                                             }
-
-                                            /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
-                                            _getch();
-                                            czy_jest = true;
-                                            raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;*/
                                         }
                                     }
 
@@ -522,11 +511,6 @@ int main()
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
                                                 dostawczaki[j].dostepnosc = "NIE";
-
-                                                /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
-                                                _getch();
-                                                czy_jest = true; 
-                                                */
                                                 raport << "Wypozyczono samochod! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
                                             }
                                         }
@@ -541,12 +525,6 @@ int main()
 
                         cout << endl << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
-
-                        /*for (int i = 0; i < ile_klientow; i++) {
-                            if (pesel == klienci[i].pesel) {
-                                klienci[i].wypozyczenie();
-                            }
-                        }*/
 
                         break;
                     }
@@ -578,13 +556,7 @@ int main()
                                                 auta[i].dostepnosc = "TAK";
                                                 raport << "Zwrocono samochod dostawczy! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
                                                 break;
-                                            }
-
-                                            /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
-                                            _getch();
-                                            czy_jest = true;
-                                            */
-                                           
+                                            } 
                                         }
                                     }
 
@@ -599,10 +571,7 @@ int main()
 
                                                     break;
                                                 }
-
-                                                /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
-                                                _getch();
-                                                czy_jest = true; */                                            }
+                                            }
                                         }
                                     }
 
@@ -653,6 +622,7 @@ int main()
             cout << "Czy na pewno chcesz zamknac program?" << endl;
             cout << "1. Tak." << endl;
             cout << "2. Nie." << endl;
+            cout << "Podaj liczbe: ";
             wybor_wyjscie = _getch();
 
             switch (wybor_wyjscie) {
@@ -713,14 +683,3 @@ int main()
     return 0;
 }
  
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
-
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
-
