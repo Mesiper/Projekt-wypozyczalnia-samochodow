@@ -64,3 +64,10 @@ Wyswietlono ilosc samochodow! 	2024-01-21 22:39:45
 Wyswietlono ilosc samochodow! 	2024-01-21 22:39:45
 Wyswietlono ilosc samochodow! 	2024-01-21 23:07:13
 Wyswietlono klienta! 	ID: 1	2024-01-22 00:25:01
+Wyswietlono dane samochodu osobowego! 	ID: K1DIS	2024-01-22 01:43:43
+Admin dodal samochod! 	ID: DRIFT11	2024-01-22 01:43:43
+Admin dodal samochod! 	ID: KK000K	2024-01-22 01:43:43
+Admin usunal samochod! 	ID: KK000K	2024-01-22 01:43:43
+Wyswietlono ilosc Samochodow! 	2024-01-22 01:47:00
+Wyswietlono ilosc samochodow! 	2024-01-22 01:47:00
+Admin dodal samochod! 	ID: LOL000	2024-01-22 11:02:45

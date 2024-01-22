@@ -453,7 +453,7 @@ int main()
                         for (int i = 0; i < ile_dostawczakow; i++) {
                             dostawczaki[i].wyswietl();
                         }
-                        raport << "Wyswietlono ilosc samochodow! " << '\t' << sformatowanyCzas << std::endl;
+                        raport << "Wyswietlono wszystkie samochody! " << '\t' << sformatowanyCzas << std::endl;
                         cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
                         break;
@@ -465,12 +465,14 @@ int main()
 
                         for (int i = 0; i < ile_klientow; i++) {
                             if (pesel == klienci[i].pesel) {
+                               int nr_klienta = i;
                                 if (klienci[i].posiadanysamochod != "BRAK") {
                                     cout << "Oddaj samochod.";
                                 }
                                 else {
+                                    int nr_klienta = i;
                                     string tablica_1;
-                                    bool czy_jest1 = false;
+                                    bool czy_jest1 = false; //czy jest posiadany ustawiamy recznie na nie, dla ulatwienia dzialania
 
                                     cout << "---- WYPOZYCZANIE ----" << endl;
                                     cout << "Podaj tablice: ";
@@ -484,7 +486,8 @@ int main()
                                                 break;
                                             }
                                             else {
-                                                klienci[i].posiadanysamochod = tablica_1;
+                                                cout << i << endl; // to i bierzeme jeszcze z petli, wiec wpisuje nam do zlej osoby.
+                                                klienci[nr_klienta].posiadanysamochod = tablica_1;
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
                                                 auta[i].dostepnosc = "NIE";
@@ -500,7 +503,7 @@ int main()
                                     if (czy_jest1 == false) {
                                         for (int i = 0; i < ile_dostawczakow; i++) {
                                             if (tablica_1 == dostawczaki[i].tablica) {
-                                                klienci[i].posiadanysamochod = tablica_1;
+                                                klienci[nr_klienta].posiadanysamochod = tablica_1;
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
                                                 dostawczaki[i].dostepnosc = "NIE";
@@ -538,7 +541,8 @@ int main()
 
                         for (int i = 0; i < ile_klientow; i++) {
                             if (pesel == klienci[i].pesel) {
-                                if (klienci[i].posiadanysamochod == "BRAK") {
+                                int nr_klienta = i;
+                                if (klienci[nr_klienta].posiadanysamochod == "BRAK") {
                                     cout << "Nie masz wypozyczonego samochodu. Zapraszamy do skorzystania z naszej oferty.";
                                 }
                                 else {
@@ -553,7 +557,7 @@ int main()
                                         if (tablica_1 == auta[i].tablica) {
                                             if (auta[i].dostepnosc == "NIE") {
                                                 cout << "Pomyslnie zwrociles samochod.";
-                                                klienci[i].posiadanysamochod = "BRAK";
+                                                klienci[nr_klienta].posiadanysamochod = "BRAK";
                                                 czy_jest1 = false;
                                                 auta[i].dostepnosc = "TAK";
                                                 break;
