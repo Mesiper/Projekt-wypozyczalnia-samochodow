@@ -73,3 +73,10 @@ Wyswietlono ilosc samochodow! 	2024-01-22 01:47:00
 Admin dodal samochod! 	ID: LOL000	2024-01-22 11:02:45
 Wypozyczono samochod! 	ID: KA888JJJAPrzez: 12024-01-22 12:08:20
 Zwrocono samochod! 	ID: KA888JJJAPrzez: 12024-01-22 12:09:58
+Wypozyczono samochod! 	ID: 	WSC55532Przez: 12024-01-22 12:52:30
+Zwrocono samochod dostawczy! 	ID: 	WSC55532Przez: 12024-01-22 12:58:13
+Wyswietlono dane samochodu osobowego! 	ID: WSC55532	2024-01-22 12:58:13
+Wyswietlono samochod dostawczy! 	WSC555322024-01-22 12:58:13
+Wyswietlono klienta! 	ID: 1	2024-01-22 12:58:13
+Wypozyczono samochod! 	ID: 	WSC55532Przez: 12024-01-22 13:27:47
+Zwrocono samochod dostawczy! 	ID: 	WSC55532Przez: 12024-01-22 13:27:47

@@ -116,7 +116,7 @@ int main()
             cout << "3. Dodaj klienta." << endl;
             cout << "4. Usun klienta." << endl;
             cout << "5. Dane klienta." << endl;
-            cout << "6. Wyswietl liczbe klientow" << endl;
+            cout << "6. Wyswietl liczbe klientow." << endl;
             cout << "7. Wstecz." << endl;
             cout << "Podaj liczbe: ";
             wybor_samochody = _getch();
@@ -196,6 +196,9 @@ int main()
                         if (tablica == auta[i].tablica) {
                             auta.erase(auta.begin()+i);
                             ile_aut--;
+                            cout << "Pomyslnie usunieto samochod z bazy." << endl << endl;
+                            cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                            _getch();
                             raport << "Admin usunal samochod! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
                         }
                     }
@@ -216,6 +219,7 @@ int main()
                     break;
                 }
                     default: {
+                        system("cls");
                         cout << "Podano niepoprawna wartosc!" << endl << endl;
                         cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
@@ -252,7 +256,6 @@ int main()
                     cout << "---- WYSWIETLANIE DANYCH SAMOCHODU ----" << endl;
                     cout << "Podaj tablice samochodu: ";
                     cin >> tab1;
-                    raport << "Wyswietlono samochod dostawczy! " << '\t' << tab1 << sformatowanyCzas << std::endl;
                     for (int i = 0; i < ile_dostawczakow; i++) {
                         if (tab1 == dostawczaki[i].tablica) {
                             dostawczaki[i].wyswietl();
@@ -301,6 +304,9 @@ int main()
                             dostawczaki.erase(dostawczaki.begin()+i);
                             ile_dostawczakow--;
                             raport << "Admin usunal samochod dostawczy! " << '\t' << "ID: " << tablica << '\t' << sformatowanyCzas << std::endl;
+                            cout << "Pomyslnie usunieto samochod z bazy." << endl << endl;
+                            cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                            _getch();
                         }
                     }
                     
@@ -342,6 +348,9 @@ int main()
                 klienci.push_back(obiekt_pom_klienci);
                 ile_klientow++;
                 raport << "Dodano klienta! " << '\t' << "ID: " << klienci[ile_klientow - 1].pesel << '\t' << sformatowanyCzas << std::endl;
+                cout << "Pomyslnie dodano klienta do bazy." << endl << endl;
+                cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                _getch();
                 break;
             }
 
@@ -359,6 +368,9 @@ int main()
                         klienci.erase(klienci.begin() + i);
                         ile_klientow--;
                         raport << "Usunieto klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
+                        cout << "Pomyslnie usunieto klienta z bazy." << endl << endl;
+                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        _getch();
                     }
                 }
                 break;
@@ -377,6 +389,7 @@ int main()
                 for (int i = 0; i < ile_klientow; i++) {
                     if (pesel == klienci[i].pesel) {
                         klienci[i].wyswietldane();
+                        cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
                         raport << "Wyswietlono klienta! " << '\t' << "ID: " << pesel << '\t' << sformatowanyCzas << std::endl;
                     }
@@ -388,8 +401,9 @@ int main()
             // Wyswietl liczbe klientow
             case'6': {
                 system("cls");
-                cout << "Ilosc klientow: " << ile_klientow;
+                cout << "Ilosc klientow: " << ile_klientow << endl << endl;
                 raport << "Wyswietlono ilosc klientow! " << '\t' << sformatowanyCzas << std::endl;
+                cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
                 _getch();
                 break;
             }
@@ -454,7 +468,7 @@ int main()
                             dostawczaki[i].wyswietl();
                         }
                         raport << "Wyswietlono wszystkie samochody! " << '\t' << sformatowanyCzas << std::endl;
-                        cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                        cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                         _getch();
                         break;
                     }
@@ -478,19 +492,18 @@ int main()
                                     cout << "Podaj tablice: ";
                                     cin >> tablica_1;
 
-                                    for (int i = 0; i < ile_aut; i++) {
-                                        if (tablica_1 == auta[i].tablica) {
-                                            if (auta[i].dostepnosc == "NIE") {
+                                    for (int j = 0; j < ile_aut; j++) {
+                                        if (tablica_1 == auta[j].tablica) {
+                                            if (auta[j].dostepnosc == "NIE") {
                                                 cout << "Ten samochod jest juz wypozyczony.";
                                                 czy_jest1 = true;
                                                 break;
                                             }
                                             else {
-                                                cout << i << endl; // to i bierzeme jeszcze z petli, wiec wpisuje nam do zlej osoby.
                                                 klienci[nr_klienta].posiadanysamochod = tablica_1;
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
-                                                auta[i].dostepnosc = "NIE";
+                                                auta[j].dostepnosc = "NIE";
                                                 raport << "Wypozyczono samochod! " << '\t' << "ID: " << '\t' << tablica_1 << "Przez: " << klienci[nr_klienta].pesel << sformatowanyCzas << std::endl;
 
                                             }
@@ -503,12 +516,12 @@ int main()
                                     }
 
                                     if (czy_jest1 == false) {
-                                        for (int i = 0; i < ile_dostawczakow; i++) {
-                                            if (tablica_1 == dostawczaki[i].tablica) {
+                                        for (int j = 0; j < ile_dostawczakow; j++) {
+                                            if (tablica_1 == dostawczaki[j].tablica) {
                                                 klienci[nr_klienta].posiadanysamochod = tablica_1;
                                                 czy_jest1 = true;
                                                 cout << "Wypozyczono samochod.";
-                                                dostawczaki[i].dostepnosc = "NIE";
+                                                dostawczaki[j].dostepnosc = "NIE";
 
                                                 /*cout << endl << "Nacisnij dowolny klawisz, aby kontynuowac.";
                                                 _getch();
@@ -652,8 +665,9 @@ int main()
                 break;
             }
             default: {
-                cout << "Podano niepoprawny numer!";
-                Sleep(1000);
+                cout << "Podano niepoprawny numer!" << endl << endl;
+                cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                _getch();
                 wybor = 1;
                 break;
             }
@@ -661,7 +675,9 @@ int main()
             break;
         }
         default: {
-                cout << "Podano niepoprawny numer!";
+                cout << "Podano niepoprawny numer!" << endl << endl;
+                cout << "Nacisnij dowolny klawisz, aby kontynuowac.";
+                _getch();
                 break;
         }
         }
