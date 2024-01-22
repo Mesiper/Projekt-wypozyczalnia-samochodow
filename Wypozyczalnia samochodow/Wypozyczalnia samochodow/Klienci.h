@@ -24,7 +24,7 @@ public:
     * tylko mozna zmienna (przydatne bardziej przy testach)
     * static oznacza, ze wartosc zmiennej jest taka sama
     * dla wszystkich obiektow tej klasy */
-    const static int ilosc_atrybutow = 4;
+    const static int ilosc_atrybutow = 5;
 
     void wczytywanie();
     void zapis_do_pliku();

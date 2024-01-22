@@ -36,6 +36,7 @@ void Klienci::zapis_do_pliku() {
     plik << nazwisko << std::endl;
     plik << pesel << std::endl;
     plik << haslo << std::endl;
+    plik << posiadanysamochod << endl;
 
     plik.close();
 }
